@@ -21,6 +21,10 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Time.timeScale == 0f)
+            return;
+
         velocityY += gravity * Time.deltaTime;
 
         Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));

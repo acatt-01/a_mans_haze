@@ -19,6 +19,10 @@ public class firstPersonCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the game is paused, don't update the camera
+        if (Time.timeScale == 0f)
+            return;
+
         // Handle mouse look for camera rotation
         HandleMouseLook();
     }
