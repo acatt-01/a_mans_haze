@@ -2,27 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
     public GameObject optionsMenuUI; // Reference to the Panel
     public GameObject pauseMenuUI;   // Reference to the Panel
+    public GameObject volumeMenuUI;   // Reference to the Panel
+    public GameObject resolutionsMenuUI;   // Reference to the Panel
 
-    //public Slider volumeSlider;      // Reference to the volume slider
-    //public Dropdown resolutionDropdown; // Reference to the resolution dropdown
+    public Slider volumeSlider;      // Reference to the volume slider
+    public TMP_Dropdown resolutionDropdown; // Reference to the resolution dropdown
 
-    //public AudioSource backgroundMusic; // Reference to background music (if any)
+    public AudioSource backgroundMusic; // Reference to background music (if any)
 
     // Start is called before the first frame update
     void Start()
-    {/*
+    {
         // Initialize volume slider and apply the current volume
         volumeSlider.value = backgroundMusic.volume;
         volumeSlider.onValueChanged.AddListener(ChangeVolume);
 
         // Initialize resolution dropdown
         resolutionDropdown.onValueChanged.AddListener(ChangeResolution);
-        SetUpResolutionDropdown();*/
+        SetUpResolutionDropdown();
     }
 
     // Update is called once per frame
@@ -30,13 +34,18 @@ public class OptionsMenu : MonoBehaviour
     {
 
     }
-    /*
-        // Show the Options Menu
-        public void ShowOptionsMenu()
-        {
-            pauseMenuUI.SetActive(false);   // Hide pause menu
-            optionsMenuUI.SetActive(true);  // Show options menu
-        }*/
+
+    public void OpenVolumeMenu()
+    {
+        optionsMenuUI.SetActive(false);  // Hide Pause Menu
+        volumeMenuUI.SetActive(true);  // Show Options Menu
+    }
+
+    public void OpenResolutionsMenu()
+    {
+        optionsMenuUI.SetActive(false);  // Hide Pause Menu
+        resolutionsMenuUI.SetActive(true);  // Show Options Menu
+    }
 
     // Hide the Options Menu and return to the Pause Menu
     public void BackToPauseMenu()
@@ -44,38 +53,64 @@ public class OptionsMenu : MonoBehaviour
         optionsMenuUI.SetActive(false); // Hide options menu
         pauseMenuUI.SetActive(true);    // Show pause menu
     }
-    /*
-        // Change volume based on slider value
-        public void ChangeVolume(float volume)
+
+    public void BackToOptionsMenu()
+    {
+        volumeMenuUI.SetActive(false); // Hide options menu
+        resolutionsMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(true);    // Show pause menu
+    }
+
+    // Change volume based on slider value
+    public void ChangeVolume(float volume)
+    {
+        backgroundMusic.volume = volume; // Adjust the background music volume
+        AudioListener.volume = volume;    // Adjust the global volume
+    }
+
+    // Set up the available screen resolutions
+    public void SetUpResolutionDropdown()
+    {
+        resolutionDropdown.ClearOptions();
+
+        Resolution[] resolutions = Screen.resolutions;
+        List<string> options = new List<string>();
+
+        /*if (resolutions.Length == 0)
         {
-            backgroundMusic.volume = volume; // Adjust the background music volume
-            AudioListener.volume = volume;    // Adjust the global volume
+            options.Add("1920x1080");
+            options.Add("1280x720");
+            options.Add("1024x768");
         }
-
-        // Set up the available screen resolutions
-        void SetUpResolutionDropdown()
+        else
+        {*/
+        foreach (Resolution resolution in resolutions)
         {
-            resolutionDropdown.ClearOptions();
-
-            Resolution[] resolutions = Screen.resolutions;
-            List<string> options = new List<string>();
-
-            foreach (Resolution resolution in resolutions)
-            {
-                string option = resolution.width + "x" + resolution.height;
-                options.Add(option);
-            }
-
-            resolutionDropdown.AddOptions(options);
-            resolutionDropdown.value = options.IndexOf(Screen.currentResolution.width + "x" + Screen.currentResolution.height);
+            string option = resolution.width + "x" + resolution.height;
+            options.Add(option);
         }
+        //}
 
-        // Change screen resolution based on dropdown selection
-        public void ChangeResolution(int resolutionIndex)
-        {
-            Resolution[] resolutions = Screen.resolutions;
-            Resolution selectedResolution = resolutions[resolutionIndex];
+        resolutionDropdown.AddOptions(options);
 
-            Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
-        }*/
+        // Set the current resolution as the default selected option
+        string currentResolution = Screen.currentResolution.width + "x" + Screen.currentResolution.height;
+        resolutionDropdown.value = options.IndexOf(currentResolution);
+
+        resolutionDropdown.RefreshShownValue();
+    }
+
+    // Change screen resolution based on dropdown selection
+    public void ChangeResolution(int resolutionIndex)
+    {
+        Resolution[] resolutions = Screen.resolutions;
+        Resolution selectedResolution = resolutions[resolutionIndex];
+
+        // Apply the new resolution
+        Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
+
+        // Optionally save this resolution for the next time the game runs
+        PlayerPrefs.SetInt("ResolutionWidth", selectedResolution.width);
+        PlayerPrefs.SetInt("ResolutionHeight", selectedResolution.height);
+    }
 }
