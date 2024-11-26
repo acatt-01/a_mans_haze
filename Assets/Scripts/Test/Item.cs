@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField]
     private string memoryName;
     [SerializeField]
-    private Image memoryImage;
+    private Sprite memoryImage;
     
     private InventoryManager inventoryManager;
 
@@ -19,12 +19,18 @@ public class Item : MonoBehaviour
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
+    void Update()
+    {
+        
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Player!");
             inventoryManager.AddItem(memoryName, memoryImage);
-            Destroy(gameObject);
+            
         }
     }
 }
