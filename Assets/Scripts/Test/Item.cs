@@ -8,6 +8,9 @@ public class Item : MonoBehaviour
 {
     [SerializeField]
     private string memoryName;
+    [TextArea]
+    [SerializeField]
+    private string memoryDescription;
     [SerializeField]
     private Sprite memoryImage;
     
@@ -29,7 +32,7 @@ public class Item : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player!");
-            inventoryManager.AddItem(memoryName, memoryImage);
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
             
         }
     }

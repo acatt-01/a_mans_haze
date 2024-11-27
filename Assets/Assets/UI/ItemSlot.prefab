@@ -241,6 +241,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
+  itemDescription: 
   itemSprite: {fileID: 0}
   isFull: 0
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 6854702523416172813}
+  selectedShader: {fileID: 4867566691891383397}
+  thisItemSelected: 0
+  itemDescriptionImage: {fileID: 0}
+  itemDescriptionNameText: {fileID: 0}
+  itemDescriptionText: {fileID: 0}
