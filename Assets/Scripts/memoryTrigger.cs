@@ -162,7 +162,7 @@ public class memoryTrigger : MonoBehaviour
             if (isMemoryActive)
             {
                 mainCamera.clearFlags = CameraClearFlags.SolidColor;
-                mainCamera.backgroundColor = new Color(0.5f, 0.3f, 0.1f);  // Apply sepia tone
+                mainCamera.backgroundColor = new Color(0.3f, 0.3f, 0.3f);  // Apply sepia tone
             }
             else
             {
