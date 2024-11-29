@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 
 public class memoryTrigger : MonoBehaviour
@@ -8,11 +9,16 @@ public class memoryTrigger : MonoBehaviour
 
     public float interactionDistance = 2f;
     public LayerMask interactableLayer;
+
+    public DialogueRunner dialogueRunner;
+
     //private bool isNearMemoryObject = false;
     //private GameObject currentMemoryObject = null;
     private bool hasTriggeredMemory = false;
     private bool hasPressedEbutton = false;
     private bool hasExitZone = false;
+
+    private DialogueManager dialogueManager;
 
     private Renderer objectRenderer;
     private Material originalMaterial;
@@ -25,9 +31,14 @@ public class memoryTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
+
         Debug.Log("Memory Trigger Script Started");
         objectRenderer = GetComponent<Renderer>();
         originalMaterial = objectRenderer.material;
+
+        dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
     }
 
     // Update is called once per frame
@@ -68,6 +79,7 @@ public class memoryTrigger : MonoBehaviour
                 hasTriggeredMemory = false;  // Reset the flag when the player exits the trigger zone
                 Debug.Log("Exited memory object's trigger zone.");
                 hasPressedEbutton = false;
+
                 // Remove the highlight when the player leaves the trigger zone
                 HighlightObject(false);
                 AdjustLightForMemory(false);  // Reset lighting when memory ends
@@ -84,6 +96,22 @@ public class memoryTrigger : MonoBehaviour
         Debug.Log("Carreguei no E: " + memoryObject.name);
         // Add memory effects, audio, visuals, etc. here
 
+        PauseBackground();
+
+        // Unlock and show the mouse cursor
+        Cursor.lockState = CursorLockMode.None;  // Unlock the cursor
+        Cursor.visible = true;  // Make the cursor visible
+
+        // Check if a dialogue is already running
+        if (dialogueRunner.IsDialogueRunning)
+        {
+            dialogueManager.CloseDialogue();
+            Debug.Log("Stopped the current dialogue.");
+        }
+
+        dialogueManager.TriggerDialogue("DaughterDialogue");
+        dialogueRunner.StartDialogue("DaughterDialogue");
+
         // Highlight the object
         HighlightObject(true);
 
@@ -92,6 +120,74 @@ public class memoryTrigger : MonoBehaviour
         //AdjustPostProcessingForMemory(true);
         AdjustCameraForMemory(true);
 
+
+    }
+
+    void PauseBackground()
+    {
+        // Find and disable PlayerMove and PlayerLook scripts to freeze player movement
+        PlayerMove playerMove = FindObjectOfType<PlayerMove>();
+        if (playerMove != null)
+        {
+            playerMove.enabled = false;  // Disable player movement script
+        }
+
+        PlayerLook playerLook = FindObjectOfType<PlayerLook>();
+        if (playerLook != null)
+        {
+            playerLook.enabled = false;  // Disable player look (camera control) script
+        }
+
+        // Optionally pause other systems like enemy AI, physics, or animations
+        Animator[] animators = FindObjectsOfType<Animator>();
+        foreach (var animator in animators)
+        {
+            animator.speed = 0f;  // Pause all background animations
+        }
+
+        // You can also disable other scripts or systems that you don't want active during dialogue
+        // E.g., Disable background music, AI, etc.
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+        foreach (var audio in audioSources)
+        {
+            if (audio != dialogueRunner.GetComponent<AudioSource>()) // Exclude dialogue audio
+            {
+                audio.Pause();  // Pause all other audio
+            }
+        }
+    }
+
+    void ResumeBackground()
+    {
+        // Re-enable PlayerMove and PlayerLook scripts to resume player movement and look control
+        PlayerMove playerMove = FindObjectOfType<PlayerMove>();
+        if (playerMove != null)
+        {
+            playerMove.enabled = true;  // Re-enable player movement script
+        }
+
+        PlayerLook playerLook = FindObjectOfType<PlayerLook>();
+        if (playerLook != null)
+        {
+            playerLook.enabled = true;  // Re-enable player look (camera control) script
+        }
+
+        // Resume background animations
+        Animator[] animators = FindObjectsOfType<Animator>();
+        foreach (var animator in animators)
+        {
+            animator.speed = 1f;  // Resume animations
+        }
+
+        // Resume other systems like background audio or AI
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+        foreach (var audio in audioSources)
+        {
+            if (audio != dialogueRunner.GetComponent<AudioSource>()) // Exclude dialogue audio
+            {
+                audio.UnPause();  // Resume all other audio
+            }
+        }
     }
 
     // Method to highlight or unhighlight the object by changing its material
@@ -170,5 +266,16 @@ public class memoryTrigger : MonoBehaviour
                 //mainCamera.backgroundColor = Color.white;  // Reset to default
             }
         }
+    }
+
+    void OnDialogueComplete()
+    {
+        Debug.Log("Dialogue complete.");
+
+        ResumeBackground();
+
+        // Lock the cursor back to the center of the screen and make it invisible
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
