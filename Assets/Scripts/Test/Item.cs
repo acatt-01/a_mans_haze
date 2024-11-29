@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     private string memoryDescription;
     [SerializeField]
     private Sprite memoryImage;
+    memoryTrigger memoryTrigger;
     
     private InventoryManager inventoryManager;
 
