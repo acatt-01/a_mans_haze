@@ -75027,7 +75027,7 @@ MonoBehaviour:
   resolutionsMenuUI: {fileID: 991185990}
   volumeSlider: {fileID: 146744366}
   resolutionDropdown: {fileID: 1521102322}
-  backgroundMusic: {fileID: 1090734367}
+  backgroundMusic: {fileID: 0}
 --- !u!4 &1892925135
 Transform:
   m_ObjectHideFlags: 0
