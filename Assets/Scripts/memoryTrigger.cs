@@ -125,17 +125,20 @@ public class memoryTrigger : MonoBehaviour
 
     void PauseBackground()
     {
-        // Find and disable PlayerMove and PlayerLook scripts to freeze player movement
-        PlayerMove playerMove = FindObjectOfType<PlayerMove>();
-        if (playerMove != null)
+        // Find all instances of PlayerMove
+        PlayerMove[] playerMoves = FindObjectsOfType<PlayerMove>();
+        foreach (var playerMove in playerMoves)
         {
-            playerMove.enabled = false;  // Disable player movement script
+            Debug.Log("Disabling PlayerMove...");
+            playerMove.enabled = false;  // Disable each instance of PlayerMove script
         }
 
-        PlayerLook playerLook = FindObjectOfType<PlayerLook>();
-        if (playerLook != null)
+        // Disable PlayerLook scripts in the same way
+        PlayerLook[] playerLooks = FindObjectsOfType<PlayerLook>();
+        foreach (var playerLook in playerLooks)
         {
-            playerLook.enabled = false;  // Disable player look (camera control) script
+            Debug.Log("Disabling PlayerLook...");
+            playerLook.enabled = false;  // Disable each instance of PlayerLook script
         }
 
         // Optionally pause other systems like enemy AI, physics, or animations
@@ -160,16 +163,16 @@ public class memoryTrigger : MonoBehaviour
     void ResumeBackground()
     {
         // Re-enable PlayerMove and PlayerLook scripts to resume player movement and look control
-        PlayerMove playerMove = FindObjectOfType<PlayerMove>();
-        if (playerMove != null)
+        PlayerMove[] playerMoves = FindObjectsOfType<PlayerMove>();
+        foreach (var playerMove in playerMoves)
         {
-            playerMove.enabled = true;  // Re-enable player movement script
+            playerMove.enabled = true;  // Disable each instance of PlayerMove script
         }
 
-        PlayerLook playerLook = FindObjectOfType<PlayerLook>();
-        if (playerLook != null)
+        PlayerLook[] playerLooks = FindObjectsOfType<PlayerLook>();
+        foreach (var playerLook in playerLooks)
         {
-            playerLook.enabled = true;  // Re-enable player look (camera control) script
+            playerLook.enabled = true;  // Disable each instance of PlayerLook script
         }
 
         // Resume background animations
