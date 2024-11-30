@@ -10,6 +10,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip laughTrack;
     public AudioClip ambientMemoryMusic;
 
+    private string currentLineAudio = null;
+    //private HashSet<string> playedLines = new HashSet<string>();
+    //private bool isAudioPlaying = false;
+
     //private VoiceOverController voiceOverManager;
 
 
@@ -17,21 +21,19 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         var dialogueRunner = FindObjectOfType<DialogueRunner>();
-        //voiceOverManager = FindObjectOfType<VoiceOverManager>();
-
-        // Hook into Yarn Spinner's line delivery event
-        //dialogueRunner.onNodeStart.AddListener(OnNodeStart);
-
-
-        /*dialogueRunner.AddCommandHandler("playSound", (string[] parameters) =>
+        if (dialogueRunner != null)
         {
-            PlaySound(parameters);
-        });*/
+            //voiceOverManager = FindObjectOfType<VoiceOverManager>();
 
-        dialogueRunner.AddCommandHandler<string>("playSound", PlaySound);
-        dialogueRunner.AddCommandHandler<string>("stopSound", StopSound);
-        //dialogueRunner.AddCommandHandler("playVoiceOver", new System.Action<string[]>(PlayVoiceOver));
+            // Hook into Yarn Spinner's line delivery event
+            dialogueRunner.AddCommandHandler<string>("playLine", PlayAudioForLine);
+            dialogueRunner.AddCommandHandler<string>("stopLine", StopAudioForLine);
 
+            dialogueRunner.AddCommandHandler<string>("playSound", PlaySound);
+            dialogueRunner.AddCommandHandler<string>("stopSound", StopSound);
+            //dialogueRunner.AddCommandHandler("playVoiceOver", new System.Action<string[]>(PlayVoiceOver));
+            dialogueRunner.onDialogueStart.AddListener(ResetAudioState);
+        }
     }
 
     // Update is called once per frame
@@ -40,37 +42,65 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    private void OnNodeStart(string nodeName)
+    private void ResetAudioState()
     {
-        Debug.Log($"Node started: {nodeName}");
-
-        // Attempt to load a corresponding audio file
-        PlayAudioForNode(nodeName);
+        Debug.Log("Resetting audio state for new dialogue.");
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        audioSource.clip = null;
+        currentLineAudio = null;
     }
 
-    private void PlayAudioForNode(string audioFileName)
+    private void PlayAudioForLine(string audioLineName)
     {
+
+        if (currentLineAudio == audioLineName && audioSource.isPlaying)
+        {
+            Debug.Log("Audio is already playing. Ignoring this request.");
+            return;
+        }
+
         // Load the audio file
-        AudioClip clip = Resources.Load<AudioClip>($"Voice/{audioFileName}");
+        AudioClip clip = Resources.Load<AudioClip>($"Voice/{audioLineName}");
         if (clip != null)
         {
-            Debug.Log($"Playing audio for node: {audioFileName}");
+            Debug.Log($"Playing audio for node: {audioLineName}");
+
+            // Stop any currently playing audio
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
             audioSource.clip = clip;
             audioSource.Play();
+            currentLineAudio = audioLineName;
         }
         else
         {
-            Debug.LogError($"Audio file not found for node: {audioFileName}");
+            Debug.LogError($"Audio file not found for node: {audioLineName}");
+        }
+    }
+
+    public void StopAudioForLine(string audioLineName)
+    {
+        if (currentLineAudio == audioLineName && audioSource.isPlaying)
+        {
+            Debug.Log($"Stopping audio for line: {audioLineName}");
+            audioSource.Stop();
+            audioSource.clip = null;
+            currentLineAudio = null;
+        }
+        else
+        {
+            Debug.Log($"Audio for line {audioLineName} is not currently playing.");
         }
     }
 
     public void PlaySound(string soundName)
     {
-        /* Debug.Log($"Received parameters: {string.Join(", ", parameters ?? new string[0])}");
-
-         if (parameters.Length > 0)
-         {
-             string soundName = parameters[0];*/
         switch (soundName)
         {
             case "laughTrack":
@@ -86,23 +116,14 @@ public class SoundManager : MonoBehaviour
                 Debug.LogError("Sound name not recognized: " + soundName);
                 break;
         }
-        /*}
-        else
-        {
-            Debug.LogError("No parameters provided for playSound command.");
-        }*/
     }
 
     public void StopSound(string soundName)
     {
-        /*if (parameters.Length > 0)
-        {*/
-        //string soundName = parameters[0];
         if (audioSource.clip != null && audioSource.clip.name == soundName)
         {
             audioSource.Stop();
         }
-        // }
     }
 
     /*// New method to play voiceovers (added for integration with Yarn Spinner)
