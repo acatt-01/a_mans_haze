@@ -10,7 +10,7 @@ public class memoryTrigger : MonoBehaviour
     public float interactionDistance = 2f;
     public LayerMask interactableLayer;
 
-    public DialogueRunner dialogueRunner;
+    
 
     //private bool isNearMemoryObject = false;
     //private GameObject currentMemoryObject = null;
@@ -18,7 +18,7 @@ public class memoryTrigger : MonoBehaviour
     private bool hasPressedEbutton = false;
     private bool hasExitZone = false;
 
-    private DialogueManager dialogueManager;
+
 
     private Renderer objectRenderer;
     private Material originalMaterial;
@@ -27,6 +27,11 @@ public class memoryTrigger : MonoBehaviour
     public Light sceneLight;  // Reference to the light in the scene
     //public PostProcessVolume postProcessVolume;  // Reference to Post Process Volume
     public Camera mainCamera;  // Reference to Camera
+    private InventoryManager inventoryManager; // reference to inventory
+    private DialogueManager dialogueManager;
+    public DialogueRunner dialogueRunner;
+
+    private MemoryObject currentMemoryObject;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +43,10 @@ public class memoryTrigger : MonoBehaviour
         objectRenderer = GetComponent<Renderer>();
         originalMaterial = objectRenderer.material;
 
+        // find inventory canvas
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        // Add Yarn custom command for inventory
+        dialogueRunner.AddCommandHandler<string>("AddToInventory", AddToInventory);
         dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
     }
 
@@ -45,10 +54,10 @@ public class memoryTrigger : MonoBehaviour
     void Update()
     {
         // Handle memory triggering on E press
-        if (!hasPressedEbutton && hasTriggeredMemory && Input.GetKeyDown(KeyCode.E)) // If the player is near the memory object
+        if (!hasPressedEbutton && hasTriggeredMemory && Input.GetKeyDown(KeyCode.E) && currentMemoryObject != null && currentMemoryObject.IsPlayerInRange()) // If the player is near the memory object
         {
             Debug.Log("Memory triggered: " + gameObject.name);
-            TriggerMemory(gameObject);
+            TriggerMemory(currentMemoryObject);
         }
     }
 
@@ -57,13 +66,20 @@ public class memoryTrigger : MonoBehaviour
     {
         if (!hasTriggeredMemory) // Only log once
         {
+            MemoryObject memoryObject = other.GetComponent<MemoryObject>();
+            if (memoryObject != null)
+            {
+                currentMemoryObject = memoryObject;
+            }
             //Debug.Log("OnTriggerEnter: " + other.gameObject.name);
             if (other.CompareTag("MemoryObject"))
             {
                 hasTriggeredMemory = true;  // Set the flag to true
-                Debug.Log("Entered memory object's trigger zone: " + other.gameObject.name);
+                Debug.Log("Entered memory object's trigger zone: " + currentMemoryObject.name);
                 hasExitZone = false;
             }
+
+            
         }
     }
 
@@ -86,11 +102,15 @@ public class memoryTrigger : MonoBehaviour
                 //AdjustPostProcessingForMemory(false);  // Reset post-processing
                 AdjustCameraForMemory(false);  // Reset camera filter
             }
+            if (currentMemoryObject != null && other.gameObject == currentMemoryObject.gameObject)
+            {
+                currentMemoryObject = null;
+            }
         }
     }
 
     // Trigger memory event (this is where you'd add memory effects, audio, etc.)
-    void TriggerMemory(GameObject memoryObject)
+    void TriggerMemory(MemoryObject memoryObject)
     {
         hasPressedEbutton = true;
         Debug.Log("Carreguei no E: " + memoryObject.name);
@@ -109,8 +129,13 @@ public class memoryTrigger : MonoBehaviour
             Debug.Log("Stopped the current dialogue.");
         }
 
-        dialogueManager.TriggerDialogue("DaughterDialogue");
-        dialogueRunner.StartDialogue("DaughterDialogue");
+        // Start Yarn dialogue
+        if (!string.IsNullOrEmpty(memoryObject.yarnNode))
+        {
+            dialogueRunner.StartDialogue(memoryObject.yarnNode);
+        }
+
+        //dialogueManager.TriggerDialogue("DaughterDialogue");
 
         // Highlight the object
         HighlightObject(true);
@@ -269,6 +294,12 @@ public class memoryTrigger : MonoBehaviour
                 //mainCamera.backgroundColor = Color.white;  // Reset to default
             }
         }
+    }
+
+    private void AddToInventory(string memoryDescription)
+    {
+        Debug.Log("Adding to inventory via Yarn: " + memoryDescription);
+        inventoryManager.AddItem(memoryDescription);
     }
 
     void OnDialogueComplete()
