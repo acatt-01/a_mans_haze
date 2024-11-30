@@ -57,7 +57,7 @@ public class memoryTrigger : MonoBehaviour
     {
         if (!hasTriggeredMemory) // Only log once
         {
-            Debug.Log("OnTriggerEnter: " + other.gameObject.name);
+            //Debug.Log("OnTriggerEnter: " + other.gameObject.name);
             if (other.CompareTag("MemoryObject"))
             {
                 hasTriggeredMemory = true;  // Set the flag to true
@@ -72,7 +72,7 @@ public class memoryTrigger : MonoBehaviour
     {
         if (!hasExitZone) // Only log once
         {
-            Debug.Log("OnTriggerExit: " + other.gameObject.name);
+            //Debug.Log("OnTriggerExit: " + other.gameObject.name);
             if (other.CompareTag("MemoryObject"))
             {
                 hasExitZone = true;
