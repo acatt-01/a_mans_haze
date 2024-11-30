@@ -15,8 +15,12 @@ public class MoveObjectController : MonoBehaviour
 	private bool showInteractMsg;
 	private GUIStyle guiStyle;
 	private string msg;
+	public InteractObject key;
 
 	private int rayLayerMask; 
+	//public float raycastRange = 3f; // Range for the raycast
+    //public LayerMask interactableLayer; // Layer for interactable objects
+    private bool keyAcquired; // Track if the player has the key
 
 
 	void Start()
@@ -33,6 +37,8 @@ public class MoveObjectController : MonoBehaviour
 		//create AnimatorOverrideController to re-use animationController for sliding draws.
 		anim = GetComponent<Animator>(); 
 		anim.enabled = false;  //disable animation states by default.  
+
+		keyAcquired = false; // player has to acquire key
 
 		//the layer used to mask raycast for interactable objects only
 		LayerMask iRayLM = LayerMask.NameToLayer("InteractRaycast");
@@ -65,7 +71,10 @@ public class MoveObjectController : MonoBehaviour
 
 
 	void Update()
-	{		
+	{	
+		// update key state
+		keyAcquired = key.hasKey;
+
 		if (playerEntered)
 		{	
 
@@ -85,18 +94,21 @@ public class MoveObjectController : MonoBehaviour
 					
 				if (moveableObject != null)		//hit object must have MoveableDraw script attached
 				{
-					showInteractMsg = true;
-					string animBoolNameNum = animBoolName + moveableObject.objectNumber.ToString();
-
-					bool isOpen = anim.GetBool(animBoolNameNum);	//need current state for message.
-					msg = getGuiMsg(isOpen);
-
-					if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
-					{
-						anim.enabled = true;
-						anim.SetBool(animBoolNameNum,!isOpen);
-						msg = getGuiMsg(!isOpen);
-					}
+					// Check what the raycast hit
+                	if (hit.collider.CompareTag("NormalDoor"))
+                	{
+						//Debug.Log("It's a normal door!");
+                	    OpenDoor(hit.collider.gameObject, moveableObject);
+                	}
+                	else if (hit.collider.CompareTag("ClosedDoor") && !keyAcquired)
+                	{
+						Debug.Log("It's a closed door! get a key");
+                	}
+					else if (hit.collider.CompareTag("ClosedDoor") && keyAcquired)
+                	{
+						Debug.Log("It's a closed door! open it");
+                	    OpenDoor(hit.collider.gameObject, moveableObject);
+                	}					
 
 				}
 			}
@@ -107,6 +119,25 @@ public class MoveObjectController : MonoBehaviour
 		}
 
 	}
+
+	void OpenDoor(GameObject door, MoveableObject moveableObject)
+    {
+        showInteractMsg = true;
+		string animBoolNameNum = animBoolName + moveableObject.objectNumber.ToString();
+
+		bool isOpen = anim.GetBool(animBoolNameNum);	//need current state for message.
+		msg = getGuiMsg(isOpen);
+
+		if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
+		{
+			anim.enabled = true;
+			anim.SetBool(animBoolNameNum,!isOpen);
+			msg = getGuiMsg(isOpen);
+			Debug.Log("Door opened!");
+			Debug.Log("Has kew been acquired?" + keyAcquired);
+		}
+        
+    }
 
 	//is current gameObject equal to the gameObject of other.  check its parents
 	private bool isEqualToParent(Collider other, out MoveableObject draw)
