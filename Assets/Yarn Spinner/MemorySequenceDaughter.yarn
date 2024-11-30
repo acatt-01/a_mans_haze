@@ -1,39 +1,31 @@
-﻿title: DaughterDialogue0
+﻿title: DaughterDialogue
+tags:
 ---
+
+// Dialogue starts
 <<stopLine DaughterPicture_0>>
 <<playLine DaughterPicture_0>>
 Jake: *This picture...* 
 
-===
-title: DaughterDialogue1
----
 <<stopLine DaughterPicture_1>>
 <<playLine DaughterPicture_1>>
 Jake: *I remember her laughter like it was yesterday...* 
-<<AddToInventory "Laughter" "I remember her laughter like it was yesterday...">>
-===
-title: DaughterDialogue2
----
+
 <<stopSound laughTrack>>
 <<playSound laughTrack>>
 Narrator: You hear the echo of your daughter's laughter, faint but heartwarming.
-===
-title: DaughterDialogue3
----
+
 <<playLine DaughterPicture_2>>
 Jake: *I wish I could go back to those days...* 
 <<stopSound laughTrack>>  
 <<playSound ambientMemoryMusic>> 
-===
-title: DaughterDialogue4
----
+
+
 Narrator: The warmth of the memory lingers. 
 <<playLine DaughterPicture_3>>
 <<wait  2>>
 <<stopLine DaughterPicture_3>>
-===
-title: DaughterDialogue5
----
+
 Narrator: You let the memory fade. 
 <<playLine DaughterPicture_4>> 
 <<wait  1.5>>

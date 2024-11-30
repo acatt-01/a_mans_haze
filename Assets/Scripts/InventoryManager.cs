@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Yarn.Unity;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -47,20 +46,16 @@ public class InventoryManager : MonoBehaviour
     }
     
     // add item to inventory
-    [YarnCommand("AddToInventory")]
-    public void AddItem(string memoryDescription)
+    public void AddItem(string memoryName, Sprite memoryImage, string memoryDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
             if (itemSlot[i].isFull == false)
             {
-                itemSlot[i].AddItem(memoryDescription);
+                itemSlot[i].AddItem(memoryName, memoryImage, memoryDescription);
             }
         }
     }
-
-    // string memoryName, Sprite memoryImage, 
-    // memoryName, memoryImage, 
 
     public void DeselectAllSlots()
     {
