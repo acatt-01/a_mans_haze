@@ -285,19 +285,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1892925133}
-        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
-        m_MethodName: OpenOptionsMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &945180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18679,6 +18667,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1773488684}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &490795418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490795417}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &491808653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72683,6 +72692,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4583943600258896869, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
         type: 3}
       propertyPath: m_Name
@@ -72690,15 +72704,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      propertyPath: m_TagString
+      value: MemoryObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590139086221955708, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616908856108708212, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779544479777803149, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: da5ecc969e07d9642b1469e6194775d0, type: 3}
     - {fileID: 65702495048144492, guid: da5ecc969e07d9642b1469e6194775d0, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 490795418}
   m_SourcePrefab: {fileID: 100100000, guid: da5ecc969e07d9642b1469e6194775d0, type: 3}
 --- !u!1001 &1775553290
 PrefabInstance:
@@ -85511,6 +85554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 435495201744630415, guid: ff38444f0350c864cb4eb050e03c9fd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6467588102455304846, guid: ff38444f0350c864cb4eb050e03c9fd1,
         type: 3}

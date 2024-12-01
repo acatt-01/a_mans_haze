@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -84,33 +84,33 @@ public class OptionsMenu : MonoBehaviour
         }
         else
         {*/
-        foreach (Resolution resolution in resolutions)
-        {
-            string option = resolution.width + "x" + resolution.height;
-            options.Add(option);
-        }
-        //}
-
-        resolutionDropdown.AddOptions(options);
-
-        // Set the current resolution as the default selected option
-        string currentResolution = Screen.currentResolution.width + "x" + Screen.currentResolution.height;
-        resolutionDropdown.value = options.IndexOf(currentResolution);
-
-        resolutionDropdown.RefreshShownValue();
-    }
-
-    // Change screen resolution based on dropdown selection
-    public void ChangeResolution(int resolutionIndex)
-    {
-        Resolution[] resolutions = Screen.resolutions;
-        Resolution selectedResolution = resolutions[resolutionIndex];
-
-        // Apply the new resolution
-        Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
-
-        // Optionally save this resolution for the next time the game runs
-        PlayerPrefs.SetInt("ResolutionWidth", selectedResolution.width);
-        PlayerPrefs.SetInt("ResolutionHeight", selectedResolution.height);
-    }
+/*foreach (Resolution resolution in resolutions)
+{
+    string option = resolution.width + "x" + resolution.height;
+    options.Add(option);
 }
+//}
+
+resolutionDropdown.AddOptions(options);
+
+// Set the current resolution as the default selected option
+string currentResolution = Screen.currentResolution.width + "x" + Screen.currentResolution.height;
+resolutionDropdown.value = options.IndexOf(currentResolution);
+
+resolutionDropdown.RefreshShownValue();
+}
+
+// Change screen resolution based on dropdown selection
+public void ChangeResolution(int resolutionIndex)
+{
+Resolution[] resolutions = Screen.resolutions;
+Resolution selectedResolution = resolutions[resolutionIndex];
+
+// Apply the new resolution
+Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
+
+// Optionally save this resolution for the next time the game runs
+PlayerPrefs.SetInt("ResolutionWidth", selectedResolution.width);
+PlayerPrefs.SetInt("ResolutionHeight", selectedResolution.height);
+}
+}*/

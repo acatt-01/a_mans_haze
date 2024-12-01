@@ -221,11 +221,11 @@ public class memoryTrigger : MonoBehaviour
             {
                 // Reset light properties to default values
                 sceneLight.intensity = 1.0f;  // Default intensity
-                sceneLight.color = Color.white;  // Default color (white)
-                sceneLight.shadows = LightShadows.None;  // No shadows (default)
-                sceneLight.shadowStrength = 1.0f;  // Default shadow strength
-                sceneLight.shadowBias = 0.05f;  // Default shadow bias
-                sceneLight.colorTemperature = 6500f;  // Default daylight temperature
+                sceneLight.color = new Color(1f, 1f, 1f);
+                //sceneLight.shadows = LightShadows.None;  // No shadows (default)
+                //sceneLight.shadowStrength = 1.0f;  // Default shadow strength
+                //sceneLight.shadowBias = 0.05f;  // Default shadow bias
+                //sceneLight.colorTemperature = 6500f;  // Default daylight temperature
                 sceneLight.useColorTemperature = false;  // Disable color temperature adjustment
 
             }
