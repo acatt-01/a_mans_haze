@@ -6,6 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PersistentScene.unity
+    guid: df6f3c2793da48f4faa5051d0892b09d
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 58615cf06082a24499d0b5dce94ea571
+  - enabled: 1
     path: Assets/Scenes/Jogo.unity
     guid: 16996010ffac54543b69c4b65ec0b2fb
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 11062ed536a78764ebb07d45d26b8eae,
+      type: 2}

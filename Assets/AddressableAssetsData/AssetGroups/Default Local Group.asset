@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 50c234ba725df784faa01529c6201cfe
+  m_SerializeEntries:
+  - m_GUID: 5efd3b2ec0c9287469e0fb27530a4508
+    m_Address: Assets/Prefabs/3DNatureAssetsPack(Lite)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75608b7b484c94f41a094f2b3b3503f4
+    m_Address: Assets/Prefabs/_Tea&coffe_service
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67f6ff95a2b7e7d42b2e8cd051d345f9
+    m_Address: Assets/Prefabs/Balls Pack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a94c59f662df59d478a3e66ab4c7a95e
+    m_Address: Assets/Prefabs/Books
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52820fb3e74641b42bf77ea3dba7c445
+    m_Address: Assets/Prefabs/Cars
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34215e26e7db1cb4586c939cda30e0a6
+    m_Address: Assets/Prefabs/Chicken
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fa01ab75fd08b746b8cb450142dffd9
+    m_Address: Assets/Prefabs/drawings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35a01ab2ddeda33409eee63718d97251
+    m_Address: Assets/Prefabs/Extinguisher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f0b50f261fd49c4aac75594c225e812
+    m_Address: Assets/Prefabs/Frames With Pictures
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d74d475fc0f824076a57d6ba4337ea6d
+    m_Address: Assets/Prefabs/Furnished Cabin Set
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6947b6a4a059f9b4f97a86719ef767df
+    m_Address: Assets/Prefabs/Garage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 873ea198833beac4b86aa9dd90f3e507
+    m_Address: Assets/Prefabs/Gardening Tools
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2987812710f5d82498876f0a50b38192
+    m_Address: Assets/Prefabs/Guns
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb1ccfd70f690b8419e4e6b9d65f678a
+    m_Address: Assets/Prefabs/House Props Soft Pack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f882db4fe0d86614888f11ada748a55f
+    m_Address: Assets/Prefabs/Keys
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3b39e5b57545334b84e83d18797808d
+    m_Address: Assets/Prefabs/Modern Guns - Handgun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cd0bd5f5e04a8e4eb8904242ae8a325
+    m_Address: Assets/Prefabs/ModularHousePack1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdd2845349e58914795a7adfc5d16530
+    m_Address: Assets/Prefabs/Phone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4cf0bd0a2e223045add838de958714a
+    m_Address: Assets/Prefabs/Piano
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c61d855aedfba645a54d3d1f977efcd
+    m_Address: Assets/Prefabs/PillsTube
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca46991f51b1485469af4dfc35a88f11
+    m_Address: Assets/Prefabs/Playground
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a3a9dc89c50f7f4dae742493125da6e
+    m_Address: Assets/Prefabs/TeaNCoffee
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f7de4235dad4404fae38fa11f886a18
+    m_Address: Assets/Prefabs/Wood Picture Frame
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2163a8f3f6fc1b940b98706673672376
+    m_Address: Assets/Prefabs/GameCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b9e2a4b14e8f63d4896884a243b974cf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c28bfbd45f381464dae9b8d8d0fd3afe, type: 2}
+    - {fileID: 11400000, guid: 33d96fb6a5911b34fb684f29165131d7, type: 2}
