@@ -55,19 +55,17 @@ public class NPCFleeAI : MonoBehaviour
 
                     string animBoolNameNum = "isOpen_Obj_" + moveableObject.objectNumber.ToString();
                     bool isOpen = doorAnim.GetBool(animBoolNameNum);
+                    isOpen = !isOpen;
 
-                    doorAnim.enabled = true;
+                    if (!isOpen)
+                    {
+                        doorAnim.enabled = true;
+                        doorAnim.SetBool(animBoolNameNum, isOpen);
 
-                    doorAnim.SetBool(animBoolNameNum, !isOpen);
-                    //isOpen = !isOpen;
-
-                    //float distanceToDoor = Vector3.Distance(transform.position, door.transform.position);
-                    //if (distanceToDoor <= doorCheckDistance)
-                    //{
-                    agent.isStopped = true; // Stop the NPC while the door is being opened
-                    yield return StartCoroutine(HandleDoorAndMove(doorAnim));
-                    agent.isStopped = false;
-                    //}
+                        agent.isStopped = true; // Stop the NPC while the door is being opened
+                        yield return StartCoroutine(HandleDoorAndMove(doorAnim));
+                        agent.isStopped = false;
+                    }
                 }
                 else
                 {

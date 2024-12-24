@@ -102,7 +102,7 @@ public class MoveObjectController : MonoBehaviour
 					if (hit.collider.CompareTag("NormalDoor"))
 					{
 						//Debug.Log("It's a normal door!");
-						OpenDoor(hit.collider.gameObject, moveableObject);
+						OpenNormalDoor(hit.collider.gameObject, moveableObject);
 					}
 					else if (hit.collider.CompareTag("ClosedDoor") && !keyAcquired)
 					{
@@ -120,6 +120,23 @@ public class MoveObjectController : MonoBehaviour
 			{
 				showInteractMsg = false;
 			}
+		}
+
+	}
+
+	void OpenNormalDoor(GameObject door, MoveableObject moveableObject)
+	{
+		showInteractMsg = true;
+		string animBoolNameNum = animBoolName + moveableObject.objectNumber.ToString();
+
+		bool isOpen = anim.GetBool(animBoolNameNum);    //need current state for message.
+		msg = getGuiMsg(isOpen);
+
+		if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
+		{
+			anim.enabled = true;
+			anim.SetBool(animBoolNameNum, !isOpen);
+			msg = getGuiMsg(isOpen);
 		}
 
 	}
