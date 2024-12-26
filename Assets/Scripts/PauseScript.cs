@@ -72,6 +72,11 @@ public class PauseScript : MonoBehaviour
         
     }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
+    }
+
     public void ResumeGame()
     {
         pauseMenuUI.SetActive(false); // Hide pause menu
