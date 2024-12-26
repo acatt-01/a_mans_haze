@@ -8,8 +8,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private string horizontalInputName = "Horizontal";
     [SerializeField] private string verticalInputName = "Vertical";
 
-    [SerializeField] private float movementSpeed = 2f;
-
+    [SerializeField] private float movementSpeed = 2f, runningSpeed = 3f, crouchSpeed, normalHeight, crouchHeight;
+    public Vector3 offset;
+    public Transform player;
+    bool crouching;
     private CharacterController charController;
 
 
@@ -21,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
+        Crouching();
     }
 
     private void PlayerMovement()
@@ -33,5 +36,36 @@ public class PlayerMove : MonoBehaviour
 
         //simple move applies delta time automatically
         charController.SimpleMove(forwardMovement + rightMovement);
+    }
+
+    private void Crouching()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            crouching = !crouching;
+        }
+
+        if (crouching)
+        {
+            charController.height = charController.height - crouchSpeed * Time.deltaTime;
+
+            if (charController.height <= crouchHeight)
+            {
+                charController.height = crouchHeight;
+            }
+        }
+        else if(!crouching)
+        {
+            charController.height = charController.height + crouchSpeed * Time.deltaTime;
+
+            if (charController.height < normalHeight)
+            {
+                player.position = player.position + offset * Time.deltaTime;
+            }
+            if (charController.height >= normalHeight)
+            {
+                charController.height = normalHeight;
+            }
+        }
     }
 }
