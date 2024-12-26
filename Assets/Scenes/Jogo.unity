@@ -5447,7 +5447,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892925134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 4
@@ -22456,7 +22456,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892925134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
         m_MethodName: BackToOptionsMenu
         m_Mode: 1
@@ -30955,6 +30955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5953033542887313873, guid: 0904f97d184e8314f8fe4e500a1fe941,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6117067461259831967, guid: 0904f97d184e8314f8fe4e500a1fe941,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -38110,6 +38115,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1785764930031958337, guid: b554ad9899686b1429f386aa21979b89,
     type: 3}
   m_PrefabInstance: {fileID: 886366434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &887338383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7842284177235101304, guid: f6f82c081d9364645b26f7099275a56f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1201867111138105734}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &888277349
 PrefabInstance:
@@ -49354,6 +49365,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013930057638, guid: 3f6ef443252cefb47b547930837634aa,
     type: 3}
   m_PrefabInstance: {fileID: 863153067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163917977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6885193932329574815, guid: 736712d1a6c91df4a836e12d73b6eeea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1793728499941453244}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1164649910
 PrefabInstance:
@@ -64205,7 +64222,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892925134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
         m_MethodName: ChangeResolution
         m_Mode: 3
@@ -81062,65 +81079,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1892355432}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1892925132
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1892925135}
-  - component: {fileID: 1892925134}
-  - component: {fileID: 1892925133}
-  m_Layer: 0
-  m_Name: MenusManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1892925133
+--- !u!114 &1892925133 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3883378821171488081, guid: 97cea444f25654e4e83df0bf5e4dd348,
+    type: 3}
+  m_PrefabInstance: {fileID: 614973529874660124}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892925132}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c60ca909e807e444a2728e0cfb5bfe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 995509166}
-  optionsMenuUI: {fileID: 1931937531}
---- !u!114 &1892925134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892925132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9aa7240142c50b4f8c64093003c236f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1892925135
+--- !u!4 &1892925135 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1831924780427603787, guid: 97cea444f25654e4e83df0bf5e4dd348,
+    type: 3}
+  m_PrefabInstance: {fileID: 614973529874660124}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892925132}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -114.82405, y: 324.16998, z: -859.4875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1665538399}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1893563200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88526,7 +88502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892925134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
         m_MethodName: BackToOptionsMenu
         m_Mode: 1
