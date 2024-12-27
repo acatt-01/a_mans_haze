@@ -1,0 +1,38 @@
+﻿title: OldPhoneBoxMemory
+tags:
+---
+
+
+// Dialogue starts
+<<declare $PhoneCondition = "neutral">>
+
+<<playLine PhoneBoxMemory_0>>
+Jake: *An old phone box... I haven’t seen one of these in years.*
+
+<<set $PhoneCondition = "choose">>
+
+<<if $PhoneCondition == "choose">>
+    -> [Inspect the phone box]
+        <<jump PhoneBoxMemoryOption1>>
+    -> [Walk away]
+        <<jump PhoneBoxMemoryOption2>>
+<<endif>>
+===
+
+title: PhoneBoxMemoryOption1
+tags:
+---
+<<playLine PhoneBoxMemory_1>>
+Jake: *It’s strange to think how these used to be everywhere... People standing in line, waiting to make a call.*
+
+<<playLine PhoneBoxMemory_2>>
+Jake: *Now they’re just relics of another time.*
+===
+
+title: PhoneBoxMemoryOption2
+tags:
+---
+<<playLine PhoneBoxMemory_3>>
+Jake: *No use dwelling on the past. It’s just an empty box now.*
+===
+

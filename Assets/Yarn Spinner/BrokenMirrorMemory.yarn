@@ -1,0 +1,52 @@
+﻿title: BrokenMirrorMemory
+tags:
+---
+
+// Dialogue starts
+<<declare $BrokenMirrorMemoryCondition = "neutral">>
+
+<<playLine BrokenMirrorMemory_0>>
+Jake: *The mirror... It’s cracked, like everything else in this house.*  
+
+<<set $BrokenMirrorMemoryCondition = "choose">>
+
+<<if $BrokenMirrorMemoryCondition == "choose">>
+    -> [Look into the mirror]  
+        <<jump BrokenMirrorMemoryOption1>>
+    -> [Touch the crack] 
+        <<jump BrokenMirrorMemoryOption2>>
+<<endif>>
+
+===
+
+title: BrokenMirrorMemoryOption1
+tags:
+---
+<<playLine BrokenMirrorMemory_1>>  
+Jake: *I see myself, but it’s not me. It’s someone tired, someone broken.*  
+
+<<playLine BrokenMirrorMemory_2>>  
+Jake: *This mirror has seen too much... arguments, tears, and moments I wish I could forget.*  
+
+<<jump BrokenMirrorMemoryEnd>> 
+===
+
+title: BrokenMirrorMemoryOption2
+tags:
+---
+<<playLine BrokenMirrorMemory_3>>  
+Jake: *The crack feels cold under my fingers. I remember the night it happened.*  
+
+<<playLine BrokenMirrorMemory_4>>  
+Jake: *A single argument can shatter so much more than glass.*  
+
+<<jump BrokenMirrorMemoryEnd>> 
+===
+
+
+title: BrokenMirrorMemoryEnd
+tags:
+---
+<<playLine BrokenMirrorMemory_5>> 
+Jake: *Sometimes I think this house holds onto the bad memories tighter than the good ones.*  
+===

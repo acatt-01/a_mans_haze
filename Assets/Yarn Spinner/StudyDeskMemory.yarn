@@ -1,0 +1,53 @@
+﻿title: StudyDeskMemory
+tags:
+---
+
+// Dialogue starts
+<<declare $StudyDeskMemoryCondition = "neutral">>
+
+<<playLine StudyDeskMemory_0>>
+Jake: *Her study desk... It’s like a snapshot of who she was and who she wanted to become.*  
+
+<<set $StudyDeskMemoryCondition = "choose">>
+
+<<if $StudyDeskMemoryCondition == "choose">>
+    -> [Pick up a notebook]  
+        <<jump StudyDeskMemoryOption1>>
+    -> [Touch the chair] 
+        <<jump StudyDeskMemoryOption2>>
+<<endif>>
+
+===
+
+title: StudyDeskMemoryOption1
+tags:
+---
+<<playLine StudyDeskMemory_1>>
+Jake: *An old notebook... Pages filled with doodles, equations, and half-finished essays.*  
+
+<<playLine StudyDeskMemory_2>>
+Jake: *She always said she wanted to change the world, but never knew where to start.*  
+
+<<jump StudyDeskMemoryEnd>>
+===
+
+
+title: StudyDeskMemoryOption2
+tags:
+---
+<<playLine StudyDeskMemory_3>>
+Jake: *This chair... She used to sit here for hours, lost in her books.*  
+
+<<playLine StudyDeskMemory_4>>
+Jake: *I’d remind her to take breaks, and she’d always roll her eyes at me. Those little arguments feel so far away now.*  
+
+<<jump StudyDeskMemoryEnd>>
+===
+
+
+title: StudyDeskMemoryEnd
+tags:
+---
+<<playLine StudyDeskMemory_5>>
+Jake: *So much of her is still here, even though she isn’t.* 
+===

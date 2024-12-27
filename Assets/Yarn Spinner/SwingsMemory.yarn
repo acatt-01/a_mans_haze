@@ -1,0 +1,63 @@
+﻿title: SwingsMemory
+tags:
+---
+// Dialogue starts
+<<declare $SwingsMemoryCondition = "neutral">>
+
+<<playLine SwingsMemory_0>>
+Narrator: The playground creaks softly in the wind, its silence echoing louder than any laughter ever could. The swings sway gently, as if remembering the touch of joyful hands.
+
+<<playLine SwingsMemory_1>>
+Jake: *The swings... She always loved these.*
+
+<<set $SwingsMemoryCondition = "choose">>
+
+<<if $SwingsMemoryCondition == "choose">>
+    -> [Sit on the swing] 
+        <<jump SwingsMemoryOption1>>
+    -> [Walk away from the swings] 
+        <<jump SwingsMemoryOption2>>
+<<endif>>
+===
+
+title: SwingsMemoryOption1
+tags:
+---
+<<playLine SwingsMemory_2>>
+Narrator: Jake takes a seat, the chains groaning under his weight. For a moment, he is transported back in time.
+
+<<playLine SwingsMemory_3>>
+Jake: *I remember pushing her, hearing her laugh as she flew higher and higher.*
+
+<<playLine SwingsMemory_4>>
+Jake: *She used to tell me she wanted to touch the sky. I believed she could.*
+
+<<jump SwingsMemoryEnd>>
+===
+
+
+title: SwingsMemoryOption2
+tags:
+---
+<<playLine SwingsMemory_5>>
+Narrator: Jake steps back, unable to bring himself to sit. The swing's gentle movement feels heavier now, burdened by unseen memories.
+
+<<playLine SwingsMemory_6>>
+Jake: *Maybe it's better not to sit. This playground holds too many ghosts.*
+
+<<playLine SwingsMemory_7>>
+Jake: *But those memories... they cling to me, don’t they?*
+
+<<jump SwingsMemoryEnd>>
+===
+
+
+
+title: SwingsMemoryEnd
+tags:
+---
+<<playLine SwingsMemory_8>>
+Narrator: The wind carries a faint sound, almost like laughter, before it fades into the stillness once again.
+===
+
+

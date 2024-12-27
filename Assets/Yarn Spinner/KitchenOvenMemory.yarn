@@ -1,0 +1,63 @@
+﻿title: KitchenOvenMemory
+tags:
+---
+
+// Dialogue starts
+<<declare $KitchenOvenMemoryCondition = "neutral">>
+
+<<playLine KitchenOvenMemory_0>>
+Narrator: The oven hums faintly, a mundane appliance that holds the warmth of countless shared meals and stories.
+
+<<playLine KitchenOvenMemory_1>>
+Jake: *This old oven... It was always more than just a machine.* 
+
+<<set $KitchenOvenMemoryCondition = "choose">>
+
+<<if $KitchenOvenMemoryCondition == "choose">>
+    -> [Open the oven door] 
+        <<jump KitchenOvenOption1>>
+    -> [Look at the oven dials] 
+        <<jump KitchenOvenOption2>>
+<<endif>>
+===
+
+
+title: KitchenOvenOption1
+tags:
+---
+
+<<playLine KitchenOvenMemory_2>>
+Narrator: Jake opens the oven door. A faint smell of baked bread and spices lingers as if time has been trapped inside.
+
+<<playLine KitchenOvenMemory_3>>
+Jake: *She loved making pies... The whole kitchen would smell like apples and cinnamon.*
+
+<<playLine KitchenOvenMemory_4>>
+Jake: *I never told her, but I always burned my tongue because I couldn’t wait for them to cool down.*
+
+<<jump KitchenOvenMemoryEnd>>
+===
+
+
+title: KitchenOvenOption2
+tags:
+---
+
+<<playLine KitchenOvenMemory_5>>
+Narrator: Jake’s fingers trace over the faded dials, worn smooth from years of use. 
+
+<<playLine KitchenOvenMemory_6>>
+Jake: *She had a system for everything: preheat to 375, never open the door too early!!*
+
+<<playLine KitchenOvenMemory_7>>
+Jake: *Her laugh when the smoke alarm went off... I still hear it sometimes.*
+
+<<jump KitchenOvenMemoryEnd>>
+===
+
+title: KitchenOvenMemoryEnd
+tags:
+---
+<<playLine KitchenOvenMemory_8>>
+Narrator: Jake steps back, the oven a silent monument to the warmth and chaos that once filled this space.
+===

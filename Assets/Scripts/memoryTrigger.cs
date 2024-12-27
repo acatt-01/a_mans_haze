@@ -184,20 +184,43 @@ public class memoryTrigger : MonoBehaviour
         }
         else if (memoryName == "tree1 (1)")
         {
-            //dialogueManager.TriggerDialogue("NeighborhoodQuiet");
-            //dialogueRunner.StartDialogue("NeighborhoodQuiet");
-            dialogueManager.TriggerDialogue("PictureMemory");
-            dialogueRunner.StartDialogue("PictureMemory");
+            dialogueManager.TriggerDialogue("NeighborhoodQuiet");
+            dialogueRunner.StartDialogue("NeighborhoodQuiet");
         }
-        else if (memoryName == "")
+        else if (memoryName == "Paint_09")
         {
             dialogueManager.TriggerDialogue("PictureMemory");
             dialogueRunner.StartDialogue("PictureMemory");
         }
+        else if (memoryName == "UK Phone Distressed")
+        {
+            dialogueManager.TriggerDialogue("OldPhoneBoxMemory");
+            dialogueRunner.StartDialogue("OldPhoneBoxMemory");
+        }
+        else if (memoryName == "SM_Football_Ball")
+        {
+            dialogueManager.TriggerDialogue("PlaygroundBallMemory");
+            dialogueRunner.StartDialogue("PlaygroundBallMemory");
+        }
+        else if (memoryName == "SM_Swings_01")
+        {
+            dialogueManager.TriggerDialogue("SwingsMemory");
+            dialogueRunner.StartDialogue("SwingsMemory");
+        }
+        else if (memoryName == "PFB_Stove")
+        {
+            dialogueManager.TriggerDialogue("KitchenOvenMemory");
+            dialogueRunner.StartDialogue("KitchenOvenMemory");
+        }
+        else if (memoryName == "(Prb)Desk")
+        {
+            dialogueManager.TriggerDialogue("StudyDeskMemory");
+            dialogueRunner.StartDialogue("StudyDeskMemory");
+        }
         else if (memoryName == "")
         {
-            dialogueManager.TriggerDialogue("");
-            dialogueRunner.StartDialogue("");
+            dialogueManager.TriggerDialogue("BrokenMirrorMemory");
+            dialogueRunner.StartDialogue("BrokenMirrorMemory");
         }
 
 

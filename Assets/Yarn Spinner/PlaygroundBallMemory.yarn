@@ -1,0 +1,40 @@
+﻿title: PlaygroundBallMemory
+tags:
+---
+
+// Dialogue starts
+<<declare $PlaygroundBallCondition = "neutral">>
+
+<<playLine PlaygroundBallMemory_0>>
+Jake: *A ball... just like the one we used to play with here.*
+
+<<set $PlaygroundBallCondition = "choose">>
+
+<<if $PlaygroundBallCondition == "choose">>
+    -> [Pick up the ball] 
+        <<jump PlaygroundBallOption1>>
+    -> [Leave it on the ground] 
+        <<jump PlaygroundBallOption2>>
+<<endif>>
+===
+
+title: PlaygroundBallOption1
+tags:
+---
+<<playLine PlaygroundBallMemory_1>>
+Jake: *We spent hours chasing this thing around. It was so simple, yet it brought us so much joy.*
+
+<<playLine PlaygroundBallMemory_2>>
+Jake: *I remember her laughter. It felt like it could fill the whole world.*
+
+===
+
+title: PlaygroundBallOption2
+tags:
+---
+<<playLine PlaygroundBallMemory_3>>
+Jake: *No point picking it up. Those days are gone.*
+
+<<playLine PlaygroundBallMemory_4>>
+Jake: *But... it’s hard not to miss them.*
+===
