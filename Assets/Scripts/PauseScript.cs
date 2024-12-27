@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,8 @@ public class PauseScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        pauseMenuUI.SetActive(false);  // Hide Pause Menu
+        optionsMenuUI.SetActive(false);  // Show Options Menu
     }
 
     // Update is called once per frame
@@ -58,8 +60,21 @@ public class PauseScript : MonoBehaviour
 
     public void OpenOptionsMenu()
     {
-        pauseMenuUI.SetActive(false);  // Hide Pause Menu
-        optionsMenuUI.SetActive(true);  // Show Options Menu
+        if (optionsMenuUI.activeInHierarchy == true)
+        {
+            optionsMenuUI.SetActive(false);
+        }
+        else
+        {
+            pauseMenuUI.SetActive(false);  // Hide Pause Menu
+            optionsMenuUI.SetActive(true);  // Show Options Menu
+        }
+        
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
     }
 
     public void ResumeGame()
@@ -86,11 +101,11 @@ public class PauseScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload current scene
     }
 
-    /* public void BackToPauseMenu()
-     {
-         optionsMenuUI.SetActive(false);  // Hide Options Menu
-         pauseMenuUI.SetActive(true);    // Show Pause Menu
-     }*/
+    public void BackToPauseMenu()
+    {
+        optionsMenuUI.SetActive(false);  // Hide Options Menu
+        pauseMenuUI.SetActive(true);    // Show Pause Menu
+    }
 
     public void QuitGame()
     {

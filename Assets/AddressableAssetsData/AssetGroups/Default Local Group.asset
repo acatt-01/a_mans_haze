@@ -137,6 +137,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6f82c081d9364645b26f7099275a56f
+    m_Address: Assets/Assets/UI/OptionsMenuCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b9e2a4b14e8f63d4896884a243b974cf, type: 2}
   m_SchemaSet:

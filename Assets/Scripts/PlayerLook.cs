@@ -9,13 +9,16 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 150f;
 
     [SerializeField] private Transform playerBody;
-    private float xAxisClamp;
+    private float xAxisClamp;// Variable to track vertical rotation
+    private float yAxisClamp; // Variable to track horizontal rotation
     private bool m_cursorIsLocked = true;
 
     private void Awake()
     {
         LockCursor();
+        // inicializar valores
         xAxisClamp = 0.0f;
+        yAxisClamp = 0.0f;
     }
 
     private void LockCursor()
@@ -55,22 +58,31 @@ public class PlayerLook : MonoBehaviour
 
         xAxisClamp += mouseY;
 
-        if (xAxisClamp > 90.0f)
+        if (xAxisClamp > 65.0f)
         {
-            xAxisClamp = 90.0f;
+            xAxisClamp = 65.0f;
             mouseY = 0.0f;
-            ClampXAxisRotationToValue(270.0f);
+            ClampXAxisRotationToValue(65.0f);
         }
-        else if (xAxisClamp < -90.0f)
+        else if (xAxisClamp < -65.0f)
         {
-            xAxisClamp = -90.0f;
+            xAxisClamp = -65.0f;
             mouseY = 0.0f;
-            ClampXAxisRotationToValue(90.0f);
+            ClampXAxisRotationToValue(65.0f);
         }
 
+        // Horizontal rotation clamping
+        yAxisClamp += -mouseX;
+        float maxHorizontalAngle = 90.0f; // Adjust this value to set the horizontal clamp range
+        yAxisClamp = Mathf.Clamp(yAxisClamp, -maxHorizontalAngle, maxHorizontalAngle);
 
-        transform.Rotate(Vector3.left * mouseY);
-        playerBody.Rotate(Vector3.up * mouseX);
+        // Apply rotations
+        transform.localRotation = Quaternion.Euler(-xAxisClamp, -yAxisClamp, 0.0f);
+        playerBody.localRotation = Quaternion.Euler(0.0f, -yAxisClamp, 0.0f);
+
+        transform.position = new Vector3(playerBody.position.x, playerBody.position.y + 1.8f, playerBody.position.z + 0.3f);
+        //transform.Rotate(Vector3.left * mouseY);
+        //playerBody.Rotate(Vector3.up * (-mouseX));
     }
 
     private void ClampXAxisRotationToValue(float value)
@@ -79,5 +91,6 @@ public class PlayerLook : MonoBehaviour
         eulerRotation.x = value;
         transform.eulerAngles = eulerRotation;
     }
+    
 
 }
