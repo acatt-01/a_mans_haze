@@ -8,21 +8,24 @@ public class memoryTrigger : MonoBehaviour
 {
 
     public float interactionDistance = 2f;
-    public LayerMask interactableLayer;
+    //public LayerMask interactableLayer;
 
     public DialogueRunner dialogueRunner;
 
-    //private bool isNearMemoryObject = false;
-    //private GameObject currentMemoryObject = null;
+    public string memoryTag = "MemoryObject";
+    private GameObject currentMemoryObject = null;
+    //private Renderer lastHighlightedRenderer;
+
+    private string memoryName = "";
     private bool hasTriggeredMemory = false;
     private bool hasPressedEbutton = false;
     private bool hasExitZone = false;
 
     private DialogueManager dialogueManager;
 
-    private Renderer objectRenderer;
-    private Material originalMaterial;
-    public Material highlightMaterial;
+    //private Renderer objectRenderer;
+    //private Material originalMaterial;
+    //public Material highlightMaterial;
 
     public Light sceneLight;  // Reference to the light in the scene
     //public PostProcessVolume postProcessVolume;  // Reference to Post Process Volume
@@ -35,20 +38,79 @@ public class memoryTrigger : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
 
         Debug.Log("Memory Trigger Script Started");
-        objectRenderer = GetComponent<Renderer>();
-        originalMaterial = objectRenderer.material;
-
         dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
     }
 
     // Update is called once per frame
     void Update()
     {
+        HandleNearbyHighlight();
+
         // Handle memory triggering on E press
         if (!hasPressedEbutton && hasTriggeredMemory && Input.GetKeyDown(KeyCode.E)) // If the player is near the memory object
         {
             Debug.Log("Memory triggered: " + gameObject.name);
             TriggerMemory(gameObject);
+        }
+    }
+
+    private void HandleNearbyHighlight()
+    {
+        GameObject closestMemoryObject = null;
+        float closestDistance = interactionDistance;
+
+        GameObject[] memoryObjects = GameObject.FindGameObjectsWithTag(memoryTag);
+
+        foreach (GameObject obj in memoryObjects)
+        {
+            float distance = Vector3.Distance(transform.position, obj.transform.position);
+            if (distance <= interactionDistance && distance < closestDistance)
+            {
+                closestMemoryObject = obj;
+                closestDistance = distance;
+            }
+        }
+
+        if (closestMemoryObject != null)
+        {
+
+            Debug.Log("Closest memory object: " + closestMemoryObject.name);
+            // Remove previous highlight if there's a new object
+            if (currentMemoryObject != closestMemoryObject)
+            {
+                RemoveHighlight();
+                AddHighlight(closestMemoryObject);
+                currentMemoryObject = closestMemoryObject;
+            }
+        }
+        else
+        {
+            Debug.Log("No memory objects in proximity");
+            RemoveHighlight();
+            currentMemoryObject = null;
+        }
+    }
+
+    private void AddHighlight(GameObject memoryObject)
+    {
+        Highlight highlightScript = memoryObject.GetComponent<Highlight>();
+        if (highlightScript != null)
+        {
+            highlightScript.ToggleHighlight(true);  // Enable highlight on the new object
+        }
+    }
+
+    private void RemoveHighlight()
+    {
+
+        if (currentMemoryObject != null)
+        {
+
+            Highlight highlightScript = currentMemoryObject.GetComponent<Highlight>();
+            if (highlightScript != null)
+            {
+                highlightScript.ToggleHighlight(false);  // Disable highlight on the current object
+            }
         }
     }
 
@@ -63,6 +125,7 @@ public class memoryTrigger : MonoBehaviour
                 hasTriggeredMemory = true;  // Set the flag to true
                 Debug.Log("Entered memory object's trigger zone: " + other.gameObject.name);
                 hasExitZone = false;
+                memoryName = other.gameObject.name;
             }
         }
     }
@@ -81,7 +144,7 @@ public class memoryTrigger : MonoBehaviour
                 hasPressedEbutton = false;
 
                 // Remove the highlight when the player leaves the trigger zone
-                HighlightObject(false);
+                //HighlightObject(false);
                 AdjustLightForMemory(false);  // Reset lighting when memory ends
                 //AdjustPostProcessingForMemory(false);  // Reset post-processing
                 AdjustCameraForMemory(false);  // Reset camera filter
@@ -108,12 +171,39 @@ public class memoryTrigger : MonoBehaviour
             dialogueManager.CloseDialogue();
             Debug.Log("Stopped the current dialogue.");
         }
+        Debug.Log("MemoryName: " + memoryName);
+        if (memoryName == "kid_drawings")
+        {
+            dialogueManager.TriggerDialogue("DaughterDialogue");
+            dialogueRunner.StartDialogue("DaughterDialogue");
+        }
+        else if (memoryName == "PillsTube_Green (1)")
+        {
+            dialogueManager.TriggerDialogue("PillsDialogue");
+            dialogueRunner.StartDialogue("PillsDialogue");
+        }
+        else if (memoryName == "tree1 (1)")
+        {
+            //dialogueManager.TriggerDialogue("NeighborhoodQuiet");
+            //dialogueRunner.StartDialogue("NeighborhoodQuiet");
+            dialogueManager.TriggerDialogue("PictureMemory");
+            dialogueRunner.StartDialogue("PictureMemory");
+        }
+        else if (memoryName == "")
+        {
+            dialogueManager.TriggerDialogue("PictureMemory");
+            dialogueRunner.StartDialogue("PictureMemory");
+        }
+        else if (memoryName == "")
+        {
+            dialogueManager.TriggerDialogue("");
+            dialogueRunner.StartDialogue("");
+        }
 
-        dialogueManager.TriggerDialogue("DaughterDialogue");
-        dialogueRunner.StartDialogue("DaughterDialogue");
+
 
         // Highlight the object
-        HighlightObject(true);
+        //HighlightObject(true);
 
         // Adjust lighting and visual effects for memory
         AdjustLightForMemory(true);
@@ -158,6 +248,18 @@ public class memoryTrigger : MonoBehaviour
                 audio.Pause();  // Pause all other audio
             }
         }
+
+        // Disable interaction message
+        Highlight highlight = FindObjectOfType<Highlight>(); // Find the Highlight instance
+        if (highlight != null && highlight.interactionMessage != null)
+        {
+            Debug.Log("Disabling interaction message...");
+            highlight.interactionMessage.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Highlight or interactionMessage not found!");
+        }
     }
 
     void ResumeBackground()
@@ -190,19 +292,6 @@ public class memoryTrigger : MonoBehaviour
             {
                 audio.UnPause();  // Resume all other audio
             }
-        }
-    }
-
-    // Method to highlight or unhighlight the object by changing its material
-    void HighlightObject(bool highlight)
-    {
-        if (highlight)
-        {
-            objectRenderer.material = highlightMaterial;  // Set highlight material
-        }
-        else
-        {
-            objectRenderer.material = originalMaterial;  // Revert back to original material
         }
     }
 

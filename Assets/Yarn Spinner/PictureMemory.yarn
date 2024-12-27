@@ -1,0 +1,49 @@
+﻿title: PictureMemory
+tags:
+---
+
+// Dialogue starts
+<<declare $PictureCondition = "neutral">>
+
+<<playLine PictureMemory_0>>
+Jake: *Man, that weekend was the best one of my life.*
+<<set $PictureCondition = "choose">>
+
+<<if $PictureCondition == "choose">>
+    -> [Reflect further]  
+        <<jump PictureMemoryOption1>>
+    -> [Step away from the picture] 
+        <<jump PictureMemoryOption2>>
+<<endif>>
+===
+title: PictureMemoryOption1
+tags:
+---
+
+<<playLine PictureMemory_1>>
+Jake: *We had no worries, just the two of us... everything felt perfect.*
+
+<<playLine PictureMemory_2>>
+Jake: *It's hard to believe how much has changed since then.*
+
+<<jump PictureMemoryEnd>>
+===
+
+title: PictureMemoryOption2
+tags:
+---
+<<playLine PictureMemory_3>>
+Jake: *Life felt simpler back then.*
+
+<<playLine PictureMemory_4>>
+Jake: *Maybe it's better to leave some memories in the past.*
+
+<<jump PictureMemoryEnd>>
+===
+
+title: PictureMemoryEnd
+tags:
+---
+<<playLine PictureMemory_5>>
+Jake: *I should keep moving. There's no point in dwelling too much on the past.*
+===

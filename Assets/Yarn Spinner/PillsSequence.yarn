@@ -1,0 +1,23 @@
+﻿title: PillsDialogue
+tags:
+---
+
+// Dialogue starts
+<<playLine Pills_0>>
+Narrator: Jake finds a bottle of pills on the ground. 
+
+<<playLine Pills_1>>
+Jake: *I should really find a way to get more of these... *
+
+<<wait 1>>
+
+<<playLine Pills_2>>
+Jake: *They keep me going, but for how long?*
+
+<<playLine Pills_3>>
+Jake: *Running out isn't an option. I'll have to find a way soon.* 
+
+<<playLine Pills_4>>
+Jake: *At least I still have some left for now.*
+
+===

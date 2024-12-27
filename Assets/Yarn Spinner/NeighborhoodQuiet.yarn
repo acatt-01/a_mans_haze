@@ -1,0 +1,63 @@
+﻿title: NeighborhoodQuiet
+tags:
+---
+
+// Dialogue starts
+<<declare $jakeMood = "neutral">>
+
+<<playLine Neighborhood_0>>
+Jake: *The neighborhood sure is quiet today... *
+<<set $jakeMood = "curious">>
+
+<<playLine Neighborhood_1>>
+Narrator: Jake stands in front of his house, gazing out into the stillness of the neighborhood. The air feels heavier than usual, as if the silence itself holds weight.
+
+<<playLine Neighborhood_2>>
+Jake: *Even the wind seems unsure whether to stick around or leave...*
+
+<<playLine Neighborhood_3>>
+Narrator: Jake looks around, taking a deep breath.
+
+<<playLine Neighborhood_4>>
+Jake: *It's like the world is holding its breath. What am I missing here?*
+
+<<if $jakeMood == "curious">>
+    -> [Investigate further] 
+        <<jump InvestigateFurther>>
+    -> [Move inside the house] 
+        <<jump MoveInside>>
+<<endif>>
+===
+title: InvestigateFurther
+tags:
+---
+<<playLine Neighborhood_5>>
+Narrator: Jake takes a cautious step toward the rustling leaves, scanning the street for anything unusual.
+
+<<playLine Neighborhood_6>>
+Jake: *Jake: There's gotta be something... anything...*
+
+<<set $jakeMood = "uneasy">>
+<<jump QuietNeighborhoodEnd>>
+===
+
+
+title: MoveInside
+tags:
+---
+<<playLine Neighborhood_7>>
+Narrator: Jake heads toward his front door, a faint uneasiness creeping into his thoughts.
+
+<<playLine Neighborhood_8>>
+Jake: *Whatever it is... it's probably nothing. Just me overthinking things again.*
+
+<<set $jakeMood = "resigned">>
+<<jump QuietNeighborhoodEnd>>
+===
+
+title: QuietNeighborhoodEnd
+tags:
+---
+<<playLine Neighborhood_9>>
+Narrator: The atmosphere remains heavy as Jake continues to feel the weight of the silence.
+===
