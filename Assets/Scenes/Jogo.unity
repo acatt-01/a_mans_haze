@@ -18373,7 +18373,6 @@ MonoBehaviour:
   renderers:
   - {fileID: 349406313}
   - {fileID: 848968407}
-  - {fileID: 0}
   - {fileID: 963572287}
   color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
   interactionMessage: {fileID: 1097877679}
@@ -75836,7 +75835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderers:
-  - {fileID: 0}
   - {fileID: 1373252098}
   - {fileID: 1199024025}
   - {fileID: 1985249247}
@@ -85610,6 +85608,11 @@ PrefabInstance:
     - target: {fileID: 1831924780427603787, guid: 97cea444f25654e4e83df0bf5e4dd348,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883378821171488081, guid: 97cea444f25654e4e83df0bf5e4dd348,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883378821171488081, guid: 97cea444f25654e4e83df0bf5e4dd348,
