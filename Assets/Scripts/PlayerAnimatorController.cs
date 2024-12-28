@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     Animator animator;
-    int isWalkingAsh, isWalkingLeftAsh, isWalkingRightAsh, isCrouchingAsh, isRunningAsh;
+    int isWalkingAsh, isWalkingLeftAsh, isWalkingRightAsh, isCrouchingAsh, isRunningAsh, isAttackingAsh, isGrabbingAsh;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,9 @@ public class PlayerAnimatorController : MonoBehaviour
         isWalkingLeftAsh = Animator.StringToHash("isWalkingLeft");
         isWalkingRightAsh = Animator.StringToHash("isWalkingRight");
         isRunningAsh = Animator.StringToHash("isRunning");
+        isAttackingAsh = Animator.StringToHash("iAttacking");
         isCrouchingAsh = Animator.StringToHash("isCrouched");
+        isGrabbingAsh = Animator.StringToHash("isGrabbing");
     }
 
     // Update is called once per frame
@@ -26,11 +28,16 @@ public class PlayerAnimatorController : MonoBehaviour
         bool isWalkingRight = animator.GetBool(isWalkingRightAsh);
         bool isRunning = animator.GetBool(isRunningAsh);
         bool isCrouching = animator.GetBool(isCrouchingAsh);
+        bool isAttacking = animator.GetBool(isAttackingAsh);
+        bool isGrabbing = animator.GetBool(isGrabbingAsh);
+
         bool forwardPressed = Input.GetKey(KeyCode.W);
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
         bool crouchPressed = Input.GetKeyDown(KeyCode.X);
+        bool attackPressed = Input.GetKeyDown(KeyCode.Tab);
+        bool grabPressed = Input.GetKeyDown(KeyCode.E);
 
         // if player presses w while in idle
         if (!isWalking && forwardPressed)
@@ -87,6 +94,26 @@ public class PlayerAnimatorController : MonoBehaviour
         if (isCrouching && crouchPressed)
         {
             animator.SetBool(isCrouchingAsh, false);
+        }
+
+        if (!isAttacking && attackPressed)
+        {
+            animator.SetBool(isAttackingAsh, true);
+        }
+
+        if (isAttacking && !attackPressed)
+        {
+            animator.SetBool(isAttackingAsh, false);
+        }
+
+        if (!isGrabbing && grabPressed)
+        {
+            animator.SetBool(isGrabbingAsh, true);
+        }
+
+        if (isGrabbing && !grabPressed)
+        {
+            animator.SetBool(isGrabbingAsh, false);
         }
     }
 }
