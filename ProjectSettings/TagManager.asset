@@ -8,6 +8,9 @@ TagManager:
   - NormalDoor
   - ClosedDoor
   - Key
+  - Cloth
+  - Weapon
+  - Wall
   layers:
   - Default
   - TransparentFX
