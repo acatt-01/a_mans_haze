@@ -217,7 +217,7 @@ public class memoryTrigger : MonoBehaviour
             dialogueManager.TriggerDialogue("StudyDeskMemory");
             dialogueRunner.StartDialogue("StudyDeskMemory");
         }
-        else if (memoryName == "")
+        else if (memoryName == "Mirror")
         {
             dialogueManager.TriggerDialogue("BrokenMirrorMemory");
             dialogueRunner.StartDialogue("BrokenMirrorMemory");

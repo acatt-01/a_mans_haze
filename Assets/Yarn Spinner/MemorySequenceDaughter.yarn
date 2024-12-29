@@ -3,32 +3,27 @@ tags:
 ---
 
 // Dialogue starts
-<<stopLine DaughterPicture_0>>
+
 <<playLine DaughterPicture_0>>
 Jake: *This picture...* 
 
-<<stopLine DaughterPicture_1>>
 <<playLine DaughterPicture_1>>
 Jake: *I remember her laughter like it was yesterday...* 
 
-<<stopSound laughTrack>>
 <<playSound laughTrack>>
 Narrator: You hear the echo of your daughter's laughter, faint but heartwarming.
+<<stopSound laughTrack>>  
 
 <<playLine DaughterPicture_2>>
 Jake: *I wish I could go back to those days...* 
-<<stopSound laughTrack>>  
-<<playSound ambientMemoryMusic>> 
 
-
-Narrator: The warmth of the memory lingers. 
 <<playLine DaughterPicture_3>>
-<<wait  2>>
-<<stopLine DaughterPicture_3>>
+Narrator: The warmth of the memory lingers. 
 
-Narrator: You let the memory fade. 
+
 <<playLine DaughterPicture_4>> 
-<<wait  1.5>>
-<<stopLine DaughterPicture_4>>
+Narrator: You let the memory fade. 
+
+
 
 ===
