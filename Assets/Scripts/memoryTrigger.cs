@@ -1,6 +1,8 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Yarn.Unity;
 
 
@@ -144,9 +146,7 @@ public class memoryTrigger : MonoBehaviour
                 hasPressedEbutton = false;
 
                 // Remove the highlight when the player leaves the trigger zone
-                //HighlightObject(false);
                 AdjustLightForMemory(false);  // Reset lighting when memory ends
-                //AdjustPostProcessingForMemory(false);  // Reset post-processing
                 AdjustCameraForMemory(false);  // Reset camera filter
             }
         }
@@ -172,6 +172,7 @@ public class memoryTrigger : MonoBehaviour
             Debug.Log("Stopped the current dialogue.");
         }
         Debug.Log("MemoryName: " + memoryName);
+        // Check if the Highlight script is enabled
         if (memoryName == "kid_drawings")
         {
             dialogueManager.TriggerDialogue("DaughterDialogue");
@@ -182,7 +183,7 @@ public class memoryTrigger : MonoBehaviour
             dialogueManager.TriggerDialogue("PillsDialogue");
             dialogueRunner.StartDialogue("PillsDialogue");
         }
-        else if (memoryName == "tree1 (1)")
+        else if (memoryName == "lucious tree")
         {
             dialogueManager.TriggerDialogue("NeighborhoodQuiet");
             dialogueRunner.StartDialogue("NeighborhoodQuiet");
@@ -223,16 +224,9 @@ public class memoryTrigger : MonoBehaviour
             dialogueRunner.StartDialogue("BrokenMirrorMemory");
         }
 
-
-
-        // Highlight the object
-        //HighlightObject(true);
-
         // Adjust lighting and visual effects for memory
         AdjustLightForMemory(true);
-        //AdjustPostProcessingForMemory(true);
         AdjustCameraForMemory(true);
-
 
     }
 
@@ -334,36 +328,11 @@ public class memoryTrigger : MonoBehaviour
                 // Reset light properties to default values
                 sceneLight.intensity = 1.0f;  // Default intensity
                 sceneLight.color = new Color(1f, 1f, 1f);
-                //sceneLight.shadows = LightShadows.None;  // No shadows (default)
-                //sceneLight.shadowStrength = 1.0f;  // Default shadow strength
-                //sceneLight.shadowBias = 0.05f;  // Default shadow bias
-                //sceneLight.colorTemperature = 6500f;  // Default daylight temperature
                 sceneLight.useColorTemperature = false;  // Disable color temperature adjustment
 
             }
         }
     }
-    /*
-    // Method to adjust post-processing effects for the memory
-    void AdjustPostProcessingForMemory(bool isMemoryActive)
-    {
-        if (postProcessVolume != null)
-        {
-            var bloom = postProcessVolume.profile.GetSetting<Bloom>();
-            var vignette = postProcessVolume.profile.GetSetting<Vignette>();
-
-            if (isMemoryActive)
-            {
-                bloom.intensity.value = 0.8f;
-                vignette.intensity.value = 0.5f;
-            }
-            else
-            {
-                bloom.intensity.value = 0f;
-                vignette.intensity.value = 0f;
-            }
-        }
-    }*/
 
     // Method to adjust the camera's background color during the memory
     void AdjustCameraForMemory(bool isMemoryActive)
@@ -392,5 +361,16 @@ public class memoryTrigger : MonoBehaviour
         // Lock the cursor back to the center of the screen and make it invisible
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Change the tag of the current memory object to "MemoryCompleted"
+        if (currentMemoryObject != null)
+        {
+            currentMemoryObject.tag = "MemoryCompleted";
+            Debug.Log("Tag changed to MemoryCompleted.");
+        }
+        else
+        {
+            Debug.Log("currentMemoryObject is null.");
+        }
     }
 }

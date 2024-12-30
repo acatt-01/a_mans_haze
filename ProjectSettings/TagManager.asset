@@ -10,7 +10,7 @@ TagManager:
   - Key
   - Cloth
   - Weapon
-  - Wall
+  - MemoryCompleted
   layers:
   - Default
   - TransparentFX
