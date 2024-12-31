@@ -54,7 +54,7 @@ public class PlayerMove : MonoBehaviour
                 charController.height = crouchHeight;
             }
         }
-        else if(!crouching)
+        else if (!crouching)
         {
             charController.height = charController.height + crouchSpeed * Time.deltaTime;
 
@@ -68,4 +68,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+
+
 }

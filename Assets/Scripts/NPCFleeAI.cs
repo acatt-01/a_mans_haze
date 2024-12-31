@@ -9,6 +9,7 @@ public class NPCFleeAI : MonoBehaviour
     public Transform safeLocation; // Where the NPC will flee to
     public float fleeSpeed = 1f;
     public float doorCheckDistance = 2f;
+    public float checkNavMeshRadius = 2f;
 
     private Coroutine doorCheckRoutine;
 
@@ -78,14 +79,36 @@ public class NPCFleeAI : MonoBehaviour
             }
 
             // Resume movement to the safe location
-            if (safeLocation != null && !agent.isStopped)
+            if (safeLocation != null && !agent.isStopped && IsOnValidNavMesh(safeLocation.position))
             {
                 //agent.isStopped = false;
                 agent.SetDestination(safeLocation.position);
             }
+            else
+            {
+                Debug.Log("Safe location is not on a valid NavMesh.");
+            }
 
             yield return new WaitForSeconds(1f); // Check for doors every 0.5 seconds
         }
+    }
+
+    // Method to check if a position is on a valid NavMesh surface
+    private bool IsOnValidNavMesh(Vector3 position)
+    {
+        NavMeshHit hit;
+        // Use NavMesh.SamplePosition to check if the position is on a valid NavMesh
+        if (NavMesh.SamplePosition(position, out hit, checkNavMeshRadius, NavMesh.AllAreas))
+        {
+            Debug.Log($"Safe Location: {position} is on a valid NavMesh at {hit.position}");
+            return true;
+        }
+        else
+        {
+            Debug.Log($"Safe Location: {position} is NOT on a valid NavMesh.");
+
+        }
+        return false;
     }
 
     private IEnumerator HandleDoorAndMove(Animator doorAnim)

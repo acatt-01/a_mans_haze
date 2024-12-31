@@ -23,7 +23,7 @@ public class ObjectActivationBehaviour : PlayableBehaviour
         if (targetObject != null)
         {
             targetObject.SetActive(activate);
-            Debug.Log("Activated: " + targetObject.name);
+            // Debug.Log("Activated: " + targetObject.name);
         }
     }
 }
