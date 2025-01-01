@@ -73,14 +73,14 @@ public class PlayerLook : MonoBehaviour
 
         // Horizontal rotation clamping
         yAxisClamp += -mouseX;
-        float maxHorizontalAngle = 90.0f; // Adjust this value to set the horizontal clamp range
+        float maxHorizontalAngle = 360.0f; // Adjust this value to set the horizontal clamp range
         yAxisClamp = Mathf.Clamp(yAxisClamp, -maxHorizontalAngle, maxHorizontalAngle);
 
         // Apply rotations
         transform.localRotation = Quaternion.Euler(-xAxisClamp, -yAxisClamp, 0.0f);
         playerBody.localRotation = Quaternion.Euler(0.0f, -yAxisClamp, 0.0f);
 
-        transform.position = new Vector3(playerBody.position.x, playerBody.position.y + 1.8f, playerBody.position.z + 0.3f);
+        transform.position = new Vector3(playerBody.position.x, playerBody.position.y, playerBody.position.z + 0.3f);
         //transform.Rotate(Vector3.left * mouseY);
         //playerBody.Rotate(Vector3.up * (-mouseX));
     }
