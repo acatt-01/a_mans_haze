@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     Animator animator;
-    int isWalkingAsh, isWalkingLeftAsh, isWalkingRightAsh, isCrouchingAsh, isRunningAsh, isAttackingAsh, isGrabbingAsh;
+    int isWalkingAsh, isWalkingLeftAsh, isWalkingRightAsh, isCrouchingAsh, isRunningAsh, isAttackingAsh, isGrabbingAsh, isWalkingBackAsh;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class PlayerAnimatorController : MonoBehaviour
         isAttackingAsh = Animator.StringToHash("iAttacking");
         isCrouchingAsh = Animator.StringToHash("isCrouched");
         isGrabbingAsh = Animator.StringToHash("isGrabbing");
+        isWalkingBackAsh = Animator.StringToHash("isWalkingBack");
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class PlayerAnimatorController : MonoBehaviour
         bool isWalking = animator.GetBool(isWalkingAsh);
         bool isWalkingLeft = animator.GetBool(isWalkingLeftAsh);
         bool isWalkingRight = animator.GetBool(isWalkingRightAsh);
+        bool isWalkingBack = animator.GetBool(isWalkingBackAsh);
         bool isRunning = animator.GetBool(isRunningAsh);
         bool isCrouching = animator.GetBool(isCrouchingAsh);
         bool isAttacking = animator.GetBool(isAttackingAsh);
@@ -34,6 +36,7 @@ public class PlayerAnimatorController : MonoBehaviour
         bool forwardPressed = Input.GetKey(KeyCode.W);
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);
+        bool backPressed = Input.GetKey(KeyCode.S);
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
         bool crouchPressed = Input.GetKeyDown(KeyCode.X);
         bool attackPressed = Input.GetKeyDown(KeyCode.Tab);
@@ -71,7 +74,6 @@ public class PlayerAnimatorController : MonoBehaviour
             animator.SetBool(isWalkingRightAsh, false);
         }
 
-
         // if player is walking and not yet running and presses left shift
         if (!isRunning && (forwardPressed && runPressed))
         {
@@ -85,15 +87,15 @@ public class PlayerAnimatorController : MonoBehaviour
         }
 
         // is in idle and crouch is pressed
-        if (!isCrouching && crouchPressed)
+        if (!isWalkingBack && backPressed)
         {
-            animator.SetBool(isCrouchingAsh, true);
+            animator.SetBool(isWalkingBackAsh, true);
         }
 
         // gets out of crouch mode
-        if (isCrouching && crouchPressed)
+        if (isWalkingBack && !backPressed)
         {
-            animator.SetBool(isCrouchingAsh, false);
+            animator.SetBool(isWalkingBackAsh, false);
         }
 
         if (!isAttacking && attackPressed)
