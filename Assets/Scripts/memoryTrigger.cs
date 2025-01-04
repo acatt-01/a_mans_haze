@@ -8,7 +8,7 @@ using Yarn.Unity;
 
 public class memoryTrigger : MonoBehaviour
 {
-
+    private MemoryTracker memoryTracker;
     public float interactionDistance = 2f;
     //public LayerMask interactableLayer;
 
@@ -36,6 +36,7 @@ public class memoryTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        memoryTracker = FindObjectOfType<MemoryTracker>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         dialogueManager = FindObjectOfType<DialogueManager>();
 
@@ -367,6 +368,13 @@ public class memoryTrigger : MonoBehaviour
         {
             currentMemoryObject.tag = "MemoryCompleted";
             Debug.Log("Tag changed to MemoryCompleted.");
+
+            // Notify the MemoryTracker to update the counter
+            if (memoryTracker != null)
+            {
+                memoryTracker.MarkMemoryComplete();
+            }
+
         }
         else
         {

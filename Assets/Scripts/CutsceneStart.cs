@@ -9,6 +9,8 @@ public class CutsceneStart : Interactable
     [SerializeField] private GameObject cutsceneToPlay;
     GameObject player;
     public GameObject leoObject;
+    public GameObject objectToDeactivate;
+    public GameObject objectToActivate;
 
     private void Start()
     {
@@ -30,5 +32,7 @@ public class CutsceneStart : Interactable
         cutsceneToPlay.SetActive(false);
         leoObject.SetActive(false);
         player.SetActive(true);
+        objectToDeactivate.SetActive(false);
+        objectToActivate.SetActive(true);
     }
 }
