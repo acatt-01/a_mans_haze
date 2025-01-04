@@ -11,6 +11,7 @@ TagManager:
   - Cloth
   - Weapon
   - MemoryCompleted
+  - Thief
   layers:
   - Default
   - TransparentFX
