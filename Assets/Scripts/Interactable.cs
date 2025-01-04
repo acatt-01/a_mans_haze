@@ -8,6 +8,7 @@ public abstract class Interactable : MonoBehaviour
     private bool isInRange;
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("Trigger entered.");
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Entered memory object's trigger zone: " + col.gameObject.name);
