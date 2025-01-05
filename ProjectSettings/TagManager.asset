@@ -12,6 +12,7 @@ TagManager:
   - Weapon
   - MemoryCompleted
   - Thief
+  - Camera
   layers:
   - Default
   - TransparentFX

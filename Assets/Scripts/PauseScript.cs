@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-
+    //fix
     public GameObject pauseMenuUI; // Reference to the Panel
     public GameObject optionsMenuUI;
+    public GameObject inventoryUI;
+    public FirstPersonController firstPersonController;
     private bool isPaused = false;
+    private bool isInventoryOpen = false;
     //public Material blurMaterial;
     //public RawImage backgroundImage;
 
@@ -18,6 +21,8 @@ public class PauseScript : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);  // Hide Pause Menu
         optionsMenuUI.SetActive(false);  // Show Options Menu
+        inventoryUI.SetActive(false);
+        //firstPersonController = FindObjectOfType<FirstPersonController>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,14 @@ public class PauseScript : MonoBehaviour
         if (isPaused && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return)))
         {
             ResumeGame(); // Call ResumeGame if either key is pressed
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (isInventoryOpen)
+                CloseInventory();
+            else
+                OpenInventory();
         }
 
         // Toggle pause on Escape key
@@ -56,6 +69,7 @@ public class PauseScript : MonoBehaviour
         AudioListener.pause = true;
         Cursor.lockState = CursorLockMode.None; // Unlock the cursor
         Cursor.visible = true;
+        firstPersonController.cameraCanMove = false;  
     }
 
     public void OpenOptionsMenu()
@@ -70,6 +84,27 @@ public class PauseScript : MonoBehaviour
             optionsMenuUI.SetActive(true);  // Show Options Menu
         }
         
+    }
+
+    public void OpenInventory()
+    {
+        inventoryUI.SetActive(true); // Show pause menu
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        Cursor.visible = true;
+        firstPersonController.cameraCanMove = false;
+        isInventoryOpen = true;   
+    }
+
+    public void CloseInventory()
+    {
+        inventoryUI.SetActive(false); // Show pause menu
+        Time.timeScale = 1f;   
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        firstPersonController.cameraCanMove = true;  
+        isInventoryOpen = false;
     }
 
     public void ReturnToMainMenu()
@@ -89,6 +124,7 @@ public class PauseScript : MonoBehaviour
         AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        firstPersonController.cameraCanMove = true;  
     }
 
     public void RestartGame()

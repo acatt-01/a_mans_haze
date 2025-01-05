@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   /*
         // original state, inactive menu
         inventoryMenu.SetActive(menuActivated);
 
@@ -42,7 +42,7 @@ public class InventoryManager : MonoBehaviour
             AudioListener.pause = true;
             Cursor.lockState = CursorLockMode.None; // Unlock the cursor
             Cursor.visible = true;
-        }
+        }*/
     }
     
     // add item to inventory
@@ -53,6 +53,7 @@ public class InventoryManager : MonoBehaviour
             if (itemSlot[i].isFull == false)
             {
                 itemSlot[i].AddItem(memoryName, memoryImage, memoryDescription);
+                break;
             }
         }
     }

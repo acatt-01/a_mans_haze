@@ -22,6 +22,7 @@ public class FirstPersonController : MonoBehaviour
 
     public Camera playerCamera;
     private bool m_cursorIsLocked = true;
+    private bool escapeClicked = false;
 
     public float fov = 60f;
     public bool invertCamera = false;
@@ -136,8 +137,6 @@ public class FirstPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        LockCursor();
-
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
@@ -152,39 +151,9 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void LockCursor()
-    {
-       
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            m_cursorIsLocked = false;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            m_cursorIsLocked = true;
-        }
-
-        if (m_cursorIsLocked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            cameraCanMove = true;
-        }
-        else if (!m_cursorIsLocked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            cameraCanMove = false;
-        }
-        
-    }
-
     void Start()
     {
-        if(lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+
 
         if(crosshair)
         {
@@ -233,8 +202,6 @@ public class FirstPersonController : MonoBehaviour
     private void Update()
     {
         #region Camera
-
-        LockCursor();
 
         // Control camera movement
         if(cameraCanMove)
@@ -451,11 +418,11 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 isSprinting = false;
-
+                /*
                 if (hideBarWhenFull && sprintRemaining == sprintDuration)
                 {
                     sprintBarCG.alpha -= 3 * Time.deltaTime;
-                }
+                }*/
 
                 targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 
