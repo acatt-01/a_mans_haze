@@ -11248,6 +11248,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 233721794}
+    - targetCorrespondingSourceObject: {fileID: 6951687633472445211, guid: acad44298735e3847a543fc3d0d2bd0d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233721797}
   m_SourcePrefab: {fileID: 100100000, guid: acad44298735e3847a543fc3d0d2bd0d, type: 3}
 --- !u!1 &233721792 stripped
 GameObject:
@@ -11288,6 +11292,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &233721797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233721792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 0}
+  memoryDescription: 
 --- !u!1001 &234784616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18589,6 +18607,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 944297455}
+    - targetCorrespondingSourceObject: {fileID: 8309633406182142118, guid: 00e5c0945f7a8b0439135711f7f02840,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 944297457}
   m_SourcePrefab: {fileID: 100100000, guid: 00e5c0945f7a8b0439135711f7f02840, type: 3}
 --- !u!4 &412779338 stripped
 Transform:
@@ -20284,6 +20306,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1800828202}
+    - targetCorrespondingSourceObject: {fileID: 1159585271464706, guid: 356b1d37aedb571479e6cff7bda80568,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1800828205}
   m_SourcePrefab: {fileID: 100100000, guid: 356b1d37aedb571479e6cff7bda80568, type: 3}
 --- !u!1001 &457890565
 PrefabInstance:
@@ -21743,6 +21769,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 483798713}
+    - targetCorrespondingSourceObject: {fileID: 1422868883321464, guid: 96b58236b5b44c848975ddea646f8ead,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 483798717}
   m_SourcePrefab: {fileID: 100100000, guid: 96b58236b5b44c848975ddea646f8ead, type: 3}
 --- !u!4 &483798711 stripped
 Transform:
@@ -21783,6 +21813,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &483798717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483798712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 0}
+  memoryDescription: 
 --- !u!1001 &483987210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21908,6 +21952,12 @@ Transform:
   - {fileID: 1811915992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &486689113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1221684054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &488146835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22148,6 +22198,21 @@ MonoBehaviour:
   - {fileID: 963572287}
   color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &490795421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490795417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 74acb4dba2f5e4a45a207b072e5be802, type: 3}
+  memoryDescription: I remember her laughter like it was yesterday... I wish I could
+    go back to those days...
 --- !u!1001 &491808653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26466,6 +26531,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1511291872}
+    - targetCorrespondingSourceObject: {fileID: 5559945759241295410, guid: cb8aff9e49677dc4bbe17898109d0fbf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1511291873}
   m_SourcePrefab: {fileID: 100100000, guid: cb8aff9e49677dc4bbe17898109d0fbf, type: 3}
 --- !u!4 &591258711 stripped
 Transform:
@@ -27116,6 +27185,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 908080823}
+    - targetCorrespondingSourceObject: {fileID: 1000013331319894, guid: b4764cfeb20ff438d99a93c5f344a5ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 908080826}
   m_SourcePrefab: {fileID: 100100000, guid: b4764cfeb20ff438d99a93c5f344a5ee, type: 3}
 --- !u!4 &613935810 stripped
 Transform:
@@ -28926,6 +28999,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 809669925}
+    - targetCorrespondingSourceObject: {fileID: 9018083828553603102, guid: 0048aa371190684478e421570bc2672b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 809669926}
   m_SourcePrefab: {fileID: 100100000, guid: 0048aa371190684478e421570bc2672b, type: 3}
 --- !u!4 &662033236 stripped
 Transform:
@@ -34255,6 +34332,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 764221837}
+    - targetCorrespondingSourceObject: {fileID: 5453117950753760717, guid: a8230dbfd0d32c545877ac0e4315156c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 764221841}
   m_SourcePrefab: {fileID: 100100000, guid: a8230dbfd0d32c545877ac0e4315156c, type: 3}
 --- !u!4 &764221834 stripped
 Transform:
@@ -34290,6 +34371,24 @@ MonoBehaviour:
   - {fileID: 764221836}
   color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &764221841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764221835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 0}
+  memoryDescription: "I see myself, but it\u2019s not me. It\u2019s someone tired,
+    someone broken. This mirror has seen too much... arguments, tears, and moments
+    I wish I could forget. The crack feels cold under my fingers. I remember the
+    night it happened.A single argument can shatter so much more than glass.Sometimes
+    I think this house holds onto the bad memories tighter than the good ones. "
 --- !u!1001 &772328637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36398,6 +36497,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &809669926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809669924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 875eadefa33e9c14fba6b5c23a5e280b, type: 3}
+  memoryDescription: I should really find a way to get more of these... They keep
+    me going, but for how long? Running out isn't an option. I'll have to find a
+    way soon.At least I still have some left for now.
 --- !u!1001 &809703718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41037,6 +41152,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1204450929}
+    - targetCorrespondingSourceObject: {fileID: 9018083828553603102, guid: 0048aa371190684478e421570bc2672b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1204450930}
   m_SourcePrefab: {fileID: 100100000, guid: 0048aa371190684478e421570bc2672b, type: 3}
 --- !u!4 &899759759 stripped
 Transform:
@@ -41483,6 +41602,23 @@ MonoBehaviour:
   - {fileID: 908080820}
   color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &908080826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908080818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 70287f263b2838f4880196043206c45d, type: 3}
+  memoryDescription: "This old oven... It was always more than just a machine. She
+    loved making pies... The whole kitchen would smell like apples and cinnamon.I
+    never told her, but I always burned my tongue because I couldn\u2019t wait for
+    them to cool down."
 --- !u!1001 &909052148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42575,8 +42711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryImage: {fileID: 21300000, guid: 212571b91737b8f438e94985c5f8d7e2, type: 3}
-  memoryDescription: It's a tree
+  memoryImage: {fileID: 21300000, guid: 2d3dc557c3c992a43b2215e144c50040, type: 3}
+  memoryDescription: The neighborhood sure is quiet today...It's like the world is
+    holding its breath. What am I missing here?
 --- !u!1 &944297454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8309633406182142118, guid: 00e5c0945f7a8b0439135711f7f02840,
@@ -42626,6 +42763,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &944297457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944297454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: d7e16e43086ff304fa3ca42b73987df9, type: 3}
+  memoryDescription: "Her study desk... It\u2019s like a snapshot of who she was
+    and who she wanted to become.She always said she wanted to change the world,
+    but never knew where to start."
 --- !u!1001 &945316469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53091,6 +53244,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1204450930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204450928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 875eadefa33e9c14fba6b5c23a5e280b, type: 3}
+  memoryDescription: 
 --- !u!1001 &1206626661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54273,10 +54440,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1221684057}
-    - targetCorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1221684056}
   m_SourcePrefab: {fileID: 100100000, guid: 2673725a67c841c449177e966997375b, type: 3}
 --- !u!4 &1221684055 stripped
@@ -54291,37 +54454,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355940321}
+  m_GameObject: {fileID: 486689113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93de01f8957b2e34eb5ba8bfb53aa74f, type: 3}
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 38004804}
-  color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-  interactionMessage: {fileID: 1097877679}
---- !u!65 &1221684057
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355940321}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5, y: 2.5, z: 2.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  memoryImage: {fileID: 21300000, guid: 8a709077a3887984e932a512805fa9f3, type: 3}
+  memoryDescription: A ball... just like the one we used to play with here. We spent
+    hours chasing this thing around. It was so simple, yet it brought us so much
+    joy.I remember her laughter. It felt like it could fill the whole world.
 --- !u!1001 &1224250394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66081,6 +66223,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1510187320}
+    - targetCorrespondingSourceObject: {fileID: 5559945759241295410, guid: cb8aff9e49677dc4bbe17898109d0fbf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510187321}
   m_SourcePrefab: {fileID: 100100000, guid: cb8aff9e49677dc4bbe17898109d0fbf, type: 3}
 --- !u!4 &1510187319 stripped
 Transform:
@@ -66115,6 +66261,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1510187321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44635271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: e9bb4d9855f77a14fb90c936f78812cc, type: 3}
+  memoryDescription: 
 --- !u!1001 &1510659342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66311,6 +66471,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1511291873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511291871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: e9bb4d9855f77a14fb90c936f78812cc, type: 3}
+  memoryDescription: 
 --- !u!1001 &1512907344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67624,6 +67798,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1557255227}
+    - targetCorrespondingSourceObject: {fileID: 1733447016227815370, guid: edd8c8a56bfb7744f92d5e40bd9ba828,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557255228}
   m_SourcePrefab: {fileID: 100100000, guid: edd8c8a56bfb7744f92d5e40bd9ba828, type: 3}
 --- !u!4 &1557255226 stripped
 Transform:
@@ -67658,6 +67836,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1557255228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001206842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: cc1d47cf07758074986de39fa1d4ad70, type: 3}
+  memoryDescription: 
 --- !u!1001 &1559527894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71165,6 +71357,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622725734}
+    - targetCorrespondingSourceObject: {fileID: 1733447016227815370, guid: edd8c8a56bfb7744f92d5e40bd9ba828,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622725737}
   m_SourcePrefab: {fileID: 100100000, guid: edd8c8a56bfb7744f92d5e40bd9ba828, type: 3}
 --- !u!4 &1622725732 stripped
 Transform:
@@ -71278,6 +71474,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1622725737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124742415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: cc1d47cf07758074986de39fa1d4ad70, type: 3}
+  memoryDescription: 
 --- !u!1001 &1623099080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72585,6 +72795,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1657042616}
+    - targetCorrespondingSourceObject: {fileID: 100010, guid: 5d95898f282c78c45b1bce7921720d1b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1657042617}
   m_SourcePrefab: {fileID: 100100000, guid: 5d95898f282c78c45b1bce7921720d1b, type: 3}
 --- !u!4 &1657042614 stripped
 Transform:
@@ -72625,6 +72839,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1657042617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657042615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 0}
+  memoryDescription: 
 --- !u!1001 &1659908190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78905,6 +79133,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 490795420}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da5ecc969e07d9642b1469e6194775d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 490795421}
   m_SourcePrefab: {fileID: 100100000, guid: da5ecc969e07d9642b1469e6194775d0, type: 3}
 --- !u!1 &1774088175
 GameObject:
@@ -80294,6 +80526,22 @@ MonoBehaviour:
   - {fileID: 1800828200}
   color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &1800828205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499737556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 2518de23ae7cd8647b4e518fac050d82, type: 3}
+  memoryDescription: Man, that weekend was the best one of my life. We had no worries,
+    just the two of us... everything felt perfect.It's hard to believe how much has
+    changed since then.
 --- !u!1001 &1806024848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81957,6 +82205,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1840985767}
+    - targetCorrespondingSourceObject: {fileID: 1974817010386286, guid: 784cd8e77087af3488f478770e91b684,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1840985772}
   m_SourcePrefab: {fileID: 100100000, guid: 784cd8e77087af3488f478770e91b684, type: 3}
 --- !u!1 &1840985766 stripped
 GameObject:
@@ -81997,6 +82249,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1840985765}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1840985772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840985766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 0}
+  memoryDescription: 
 --- !u!1 &1846602077
 GameObject:
   m_ObjectHideFlags: 0
@@ -82075,6 +82341,22 @@ MonoBehaviour:
   - {fileID: 1847159816}
   color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &1847159821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847159814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: 1f684d61e406b4f4bba2d3e9c34d99bd, type: 3}
+  memoryDescription: The swings... She always loved these. I remember pushing her,
+    hearing her laugh as she flew higher and higher.She used to tell me she wanted
+    to touch the sky. I believed she could.
 --- !u!1001 &1848023474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82368,6 +82650,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1855156159}
+    - targetCorrespondingSourceObject: {fileID: 1415691809008416, guid: c54434b0d75014247afbb35feabfb60b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855156160}
   m_SourcePrefab: {fileID: 100100000, guid: c54434b0d75014247afbb35feabfb60b, type: 3}
 --- !u!4 &1855156156 stripped
 Transform:
@@ -82423,6 +82709,22 @@ MonoBehaviour:
   - {fileID: 372569303}
   color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   interactionMessage: {fileID: 1097877679}
+--- !u!114 &1855156160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855156157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryImage: {fileID: 21300000, guid: aabc5698b9dd569408099b30340cc75f, type: 3}
+  memoryDescription: "It\u2019s strange to think how these used to be everywhere...
+    People standing in line, waiting to make a call.Now they\u2019re just relics
+    of another time."
 --- !u!1001 &1855416211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89604,6 +89906,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1847159818}
+    - targetCorrespondingSourceObject: {fileID: 207510570429624245, guid: 9fc0d344e6ba1574183600c17ba78f3b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1847159821}
   m_SourcePrefab: {fileID: 100100000, guid: 9fc0d344e6ba1574183600c17ba78f3b, type: 3}
 --- !u!1001 &2003318896
 PrefabInstance:
