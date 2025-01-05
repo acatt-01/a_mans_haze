@@ -42,6 +42,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         isFull = true;
 
         itemImage.sprite = itemSprite;
+
+        // Update UI or visuals for the item slot if necessary
+        Debug.Log("Memory added to slot: " + itemName);
     }
 
     public void OnPointerClick(PointerEventData eventData)

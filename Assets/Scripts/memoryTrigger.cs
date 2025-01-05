@@ -19,11 +19,13 @@ public class memoryTrigger : MonoBehaviour
     //private Renderer lastHighlightedRenderer;
 
     private string memoryName = "";
+    GameObject targetObject;
     private bool hasTriggeredMemory = false;
     private bool hasPressedEbutton = false;
     private bool hasExitZone = false;
 
     private DialogueManager dialogueManager;
+    InventoryManager inventoryManager;
 
     //private Renderer objectRenderer;
     //private Material originalMaterial;
@@ -39,6 +41,12 @@ public class memoryTrigger : MonoBehaviour
         memoryTracker = FindObjectOfType<MemoryTracker>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         dialogueManager = FindObjectOfType<DialogueManager>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
+
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager not found! Please ensure it exists in the scene.");
+        }
 
         Debug.Log("Memory Trigger Script Started");
         dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
@@ -77,7 +85,7 @@ public class memoryTrigger : MonoBehaviour
         if (closestMemoryObject != null)
         {
 
-            Debug.Log("Closest memory object: " + closestMemoryObject.name);
+            //Debug.Log("Closest memory object: " + closestMemoryObject.name);
             // Remove previous highlight if there's a new object
             if (currentMemoryObject != closestMemoryObject)
             {
@@ -88,7 +96,7 @@ public class memoryTrigger : MonoBehaviour
         }
         else
         {
-            Debug.Log("No memory objects in proximity");
+            //Debug.Log("No memory objects in proximity");
             RemoveHighlight();
             currentMemoryObject = null;
         }
@@ -129,6 +137,7 @@ public class memoryTrigger : MonoBehaviour
                 Debug.Log("Entered memory object's trigger zone: " + other.gameObject.name);
                 hasExitZone = false;
                 memoryName = other.gameObject.name;
+                targetObject = other.gameObject;
             }
         }
     }
@@ -166,6 +175,10 @@ public class memoryTrigger : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;  // Unlock the cursor
         Cursor.visible = true;  // Make the cursor visible
 
+        // for inventory
+        Sprite memoryImage;
+        string memoryDescription;
+
         // Check if a dialogue is already running
         if (dialogueRunner.IsDialogueRunning)
         {
@@ -188,6 +201,9 @@ public class memoryTrigger : MonoBehaviour
         {
             dialogueManager.TriggerDialogue("NeighborhoodQuiet");
             dialogueRunner.StartDialogue("NeighborhoodQuiet");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "Paint_09")
         {
@@ -234,20 +250,21 @@ public class memoryTrigger : MonoBehaviour
     void PauseBackground()
     {
         // Find all instances of PlayerMove
-        PlayerMove[] playerMoves = FindObjectsOfType<PlayerMove>();
+        FirstPersonController[] playerMoves = FindObjectsOfType<FirstPersonController>();
         foreach (var playerMove in playerMoves)
         {
             Debug.Log("Disabling PlayerMove...");
             playerMove.enabled = false;  // Disable each instance of PlayerMove script
         }
 
+        /*
         // Disable PlayerLook scripts in the same way
         PlayerLook[] playerLooks = FindObjectsOfType<PlayerLook>();
         foreach (var playerLook in playerLooks)
         {
             Debug.Log("Disabling PlayerLook...");
             playerLook.enabled = false;  // Disable each instance of PlayerLook script
-        }
+        }*/
 
         // Optionally pause other systems like enemy AI, physics, or animations
         Animator[] animators = FindObjectsOfType<Animator>();
@@ -283,17 +300,18 @@ public class memoryTrigger : MonoBehaviour
     void ResumeBackground()
     {
         // Re-enable PlayerMove and PlayerLook scripts to resume player movement and look control
-        PlayerMove[] playerMoves = FindObjectsOfType<PlayerMove>();
+        FirstPersonController[] playerMoves = FindObjectsOfType<FirstPersonController>();
         foreach (var playerMove in playerMoves)
         {
             playerMove.enabled = true;  // Disable each instance of PlayerMove script
         }
 
+    /*
         PlayerLook[] playerLooks = FindObjectsOfType<PlayerLook>();
         foreach (var playerLook in playerLooks)
         {
             playerLook.enabled = true;  // Disable each instance of PlayerLook script
-        }
+        }*/
 
         // Resume background animations
         Animator[] animators = FindObjectsOfType<Animator>();

@@ -80,7 +80,7 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(-xAxisClamp, -yAxisClamp, 0.0f);
         playerBody.localRotation = Quaternion.Euler(0.0f, -yAxisClamp, 0.0f);
 
-        transform.position = new Vector3(playerBody.position.x, playerBody.position.y, playerBody.position.z + 0.3f);
+        transform.position = new Vector3(playerBody.position.x, playerBody.position.y + 1.5f, playerBody.position.z + 0.3f);
         //transform.Rotate(Vector3.left * mouseY);
         //playerBody.Rotate(Vector3.up * (-mouseX));
     }
