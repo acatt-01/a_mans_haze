@@ -10,7 +10,7 @@ public class PauseScript : MonoBehaviour
     public GameObject pauseMenuUI; // Reference to the Panel
     public GameObject optionsMenuUI;
     public GameObject inventoryUI;
-    FirstPersonController firstPersonController;
+    public FirstPersonController firstPersonController;
     private bool isPaused = false;
     private bool isInventoryOpen = false;
     //public Material blurMaterial;
@@ -22,7 +22,7 @@ public class PauseScript : MonoBehaviour
         pauseMenuUI.SetActive(false);  // Hide Pause Menu
         optionsMenuUI.SetActive(false);  // Show Options Menu
         inventoryUI.SetActive(false);
-        firstPersonController = FindObjectOfType<FirstPersonController>();
+        //firstPersonController = FindObjectOfType<FirstPersonController>();
     }
 
     // Update is called once per frame
