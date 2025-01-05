@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-
+    //fix
     public GameObject pauseMenuUI; // Reference to the Panel
     public GameObject optionsMenuUI;
     public GameObject inventoryUI;
