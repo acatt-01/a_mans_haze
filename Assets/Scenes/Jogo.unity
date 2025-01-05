@@ -1712,12 +1712,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 37811657}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &38004804 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 169289586777681777, guid: 2673725a67c841c449177e966997375b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1221684054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44635271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5559945759241295410, guid: cb8aff9e49677dc4bbe17898109d0fbf,
@@ -15681,12 +15675,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1601802053}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &355940321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1221684054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &356432843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21952,12 +21940,6 @@ Transform:
   - {fileID: 1811915992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &486689113 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1221684054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &488146835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54436,11 +54418,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5424345698205063750, guid: 2673725a67c841c449177e966997375b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1221684056}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2673725a67c841c449177e966997375b, type: 3}
 --- !u!4 &1221684055 stripped
 Transform:
@@ -54448,22 +54426,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1221684054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1221684056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486689113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5338724d9097f446a37664ba405d95c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  memoryImage: {fileID: 21300000, guid: 8a709077a3887984e932a512805fa9f3, type: 3}
-  memoryDescription: A ball... just like the one we used to play with here. We spent
-    hours chasing this thing around. It was so simple, yet it brought us so much
-    joy.I remember her laughter. It felt like it could fill the whole world.
 --- !u!1001 &1224250394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91659,6 +91621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9629974
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148701837232001651, guid: 14eff43560d00ad48a0e0a14bce124d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.397
       objectReference: {fileID: 0}
     - target: {fileID: 5009012893799656652, guid: 14eff43560d00ad48a0e0a14bce124d6,
         type: 3}

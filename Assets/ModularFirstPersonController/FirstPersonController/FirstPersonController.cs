@@ -406,10 +406,10 @@ public class FirstPersonController : MonoBehaviour
                         Crouch();
                     }
 
-                    if (hideBarWhenFull && !unlimitedSprint)
+                    /*if (hideBarWhenFull && !unlimitedSprint)
                     {
                         sprintBarCG.alpha += 5 * Time.deltaTime;
-                    }
+                    }*/
                 }
 
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);

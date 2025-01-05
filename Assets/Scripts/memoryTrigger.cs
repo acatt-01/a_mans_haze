@@ -191,11 +191,17 @@ public class memoryTrigger : MonoBehaviour
         {
             dialogueManager.TriggerDialogue("DaughterDialogue");
             dialogueRunner.StartDialogue("DaughterDialogue");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "PillsTube_Green (1)")
         {
             dialogueManager.TriggerDialogue("PillsDialogue");
             dialogueRunner.StartDialogue("PillsDialogue");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "lucious tree")
         {
@@ -209,36 +215,57 @@ public class memoryTrigger : MonoBehaviour
         {
             dialogueManager.TriggerDialogue("PictureMemory");
             dialogueRunner.StartDialogue("PictureMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "UK Phone Distressed")
         {
             dialogueManager.TriggerDialogue("OldPhoneBoxMemory");
             dialogueRunner.StartDialogue("OldPhoneBoxMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "SM_Football_Ball")
         {
             dialogueManager.TriggerDialogue("PlaygroundBallMemory");
             dialogueRunner.StartDialogue("PlaygroundBallMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "SM_Swings_01")
         {
             dialogueManager.TriggerDialogue("SwingsMemory");
             dialogueRunner.StartDialogue("SwingsMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "PFB_Stove")
         {
             dialogueManager.TriggerDialogue("KitchenOvenMemory");
             dialogueRunner.StartDialogue("KitchenOvenMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "(Prb)Desk")
         {
             dialogueManager.TriggerDialogue("StudyDeskMemory");
             dialogueRunner.StartDialogue("StudyDeskMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
         else if (memoryName == "Mirror")
         {
             dialogueManager.TriggerDialogue("BrokenMirrorMemory");
             dialogueRunner.StartDialogue("BrokenMirrorMemory");
+            memoryImage = targetObject.GetComponent<MemoryData>().memoryImage;
+            memoryDescription = targetObject.GetComponent<MemoryData>().memoryDescription;
+            inventoryManager.AddItem(memoryName, memoryImage, memoryDescription);
         }
 
         // Adjust lighting and visual effects for memory
