@@ -418,11 +418,11 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 isSprinting = false;
-
+                /*
                 if (hideBarWhenFull && sprintRemaining == sprintDuration)
                 {
                     sprintBarCG.alpha -= 3 * Time.deltaTime;
-                }
+                }*/
 
                 targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 

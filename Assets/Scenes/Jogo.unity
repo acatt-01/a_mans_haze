@@ -6092,6 +6092,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7294,6 +7304,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000022351742
       objectReference: {fileID: 0}
+    - target: {fileID: 4377095799889137386, guid: 63293ed9a8786b94f84c63bf908c18b0,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].value
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4591852206743170958, guid: 63293ed9a8786b94f84c63bf908c18b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8439,8 +8454,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0021551398
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9083994938083053293, guid: 63293ed9a8786b94f84c63bf908c18b0, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5816671935225411062, guid: 63293ed9a8786b94f84c63bf908c18b0, type: 3}
     m_AddedGameObjects: []
@@ -8908,6 +8922,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1265948307658516293, guid: 4a750097d33b7f647bb712ac1cd84146,
     type: 3}
   m_PrefabInstance: {fileID: 175608905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &177331246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4893949974570310409, guid: 63293ed9a8786b94f84c63bf908c18b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 166611146}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &177889248
 PrefabInstance:
@@ -10263,6 +10283,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12965,7 +12995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &281593925
 Transform:
   m_ObjectHideFlags: 0
@@ -15128,6 +15158,16 @@ PrefabInstance:
       objectReference: {fileID: 1100635328}
     - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
         type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
       propertyPath: fleeingNPC
       value: 
       objectReference: {fileID: 530159853}
@@ -17114,6 +17154,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011411071628, guid: 9d10197870d1b0d4faefe30b1a81d689,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011411071628, guid: 9d10197870d1b0d4faefe30b1a81d689,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29295,6 +29345,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29857,6 +29917,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011411071628, guid: 9d10197870d1b0d4faefe30b1a81d689,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011411071628, guid: 9d10197870d1b0d4faefe30b1a81d689,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41499,6 +41569,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47030,6 +47110,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000014034127314, guid: 1b94ae05025ef3f46ae988df48f631f4,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000014034127314, guid: 1b94ae05025ef3f46ae988df48f631f4,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49902,6 +49992,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
         type: 3}
       propertyPath: fleeingNPC
@@ -57393,6 +57493,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66360,6 +66470,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011518356856, guid: 2c955ce5cc6b1a542900b51ed266259c,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011518356856, guid: 2c955ce5cc6b1a542900b51ed266259c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82718,9 +82838,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4052771144207855371, guid: 785d23dea33350e448400159462c7f1b,
         type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 641614689}
+    - target: {fileID: 4052771144207855371, guid: 785d23dea33350e448400159462c7f1b,
+        type: 3}
       propertyPath: characterDummy
       value: 
       objectReference: {fileID: 166611148}
+    - target: {fileID: 4052771144207855371, guid: 785d23dea33350e448400159462c7f1b,
+        type: 3}
+      propertyPath: custsceneCamera
+      value: 
+      objectReference: {fileID: 177331246}
     - target: {fileID: 4052771144207855371, guid: 785d23dea33350e448400159462c7f1b,
         type: 3}
       propertyPath: cutsceneDirector
@@ -87609,7 +87739,7 @@ PrefabInstance:
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.1
+      value: 52.3
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
@@ -87619,7 +87749,7 @@ PrefabInstance:
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.53
+      value: -11.2
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
@@ -89237,6 +89367,16 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1100635328}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 641614696}
+    - target: {fileID: 114000011522356748, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1962943688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -6,8 +6,8 @@ public class MoveObjectController : MonoBehaviour
 	public float reachRange = 1.8f;
 
 	private Animator anim;
-	private Camera fpsCam;
-	private GameObject player;
+	public Camera fpsCam;
+	public GameObject player;
 
 	public UnityEngine.AI.NavMeshObstacle doorObstacle; // Reference to the NavMeshObstacle on the door
 
@@ -30,13 +30,13 @@ public class MoveObjectController : MonoBehaviour
 	void Start()
 	{
 		//Initialize moveDrawController if script is enabled.
-		player = GameObject.FindGameObjectWithTag("Player");
+		/*player = GameObject.FindGameObjectWithTag("Player");
 
 		fpsCam = Camera.main;
 		if (fpsCam == null) //a reference to Camera is required for rayasts
 		{
 			Debug.LogError("A camera tagged 'MainCamera' is missing.");
-		}
+		}*/
 
 		//create AnimatorOverrideController to re-use animationController for sliding draws.
 		anim = GetComponent<Animator>();
@@ -76,6 +76,7 @@ public class MoveObjectController : MonoBehaviour
 
 	void Update()
 	{
+		
 		// update key state
 		keyAcquired = key.hasKey;
 
