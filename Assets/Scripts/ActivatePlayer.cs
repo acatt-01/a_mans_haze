@@ -45,7 +45,7 @@ public class ActivatePlayer : MonoBehaviour
         }
 
         // Optionally, disable the cutscene GameObject
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
 }

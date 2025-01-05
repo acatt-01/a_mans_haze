@@ -2955,6 +2955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reachRange: 1.8
+  fpsCam: {fileID: 1888396022}
+  player: {fileID: 1888396020}
   doorObstacle: {fileID: 0}
   fleeingNPC: {fileID: 0}
   key: {fileID: 0}
@@ -2979,6 +2981,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1770800723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9077303262099613045, guid: 7ae917b9b96f135418afcecd4c2d1438,
+    type: 3}
+  m_PrefabInstance: {fileID: 1872857269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1770800728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770800723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064a0f778f2d4f744b23d634caef0fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 2
+  progressBar: {fileID: 1587168}
+  holdDuration: 2
+  joystickCanvasGroup: {fileID: 471915270}
 --- !u!1001 &1806303660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3197,6 +3221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reachRange: 1.8
+  fpsCam: {fileID: 0}
+  player: {fileID: 0}
   doorObstacle: {fileID: 0}
   fleeingNPC: {fileID: 0}
   key: {fileID: 0}
@@ -3466,6 +3492,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 471915270}
+    - targetCorrespondingSourceObject: {fileID: 9077303262099613045, guid: 7ae917b9b96f135418afcecd4c2d1438,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770800728}
   m_SourcePrefab: {fileID: 100100000, guid: 7ae917b9b96f135418afcecd4c2d1438, type: 3}
 --- !u!1001 &1888396019
 PrefabInstance:
@@ -3543,8 +3573,74 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1146960638959043721, guid: a1fc6e15a62a7014bae4d1afc5d8359d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1888396023}
   m_SourcePrefab: {fileID: 100100000, guid: a1fc6e15a62a7014bae4d1afc5d8359d, type: 3}
+--- !u!1 &1888396020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1146960639178663725, guid: a1fc6e15a62a7014bae4d1afc5d8359d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888396019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1888396021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1146960638959043721, guid: a1fc6e15a62a7014bae4d1afc5d8359d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888396019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1888396022 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1146960638959043719, guid: a1fc6e15a62a7014bae4d1afc5d8359d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888396019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888396023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888396021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &2068943786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36,

@@ -26,6 +26,8 @@ public class MoveObjectController : MonoBehaviour
 	//public LayerMask interactableLayer; // Layer for interactable objects
 	private bool keyAcquired; // Track if the player has the key
 
+	private bool mobileTrigger = false;
+
 
 	void Start()
 	{
@@ -76,9 +78,12 @@ public class MoveObjectController : MonoBehaviour
 
 	void Update()
 	{
-		
+
 		// update key state
+		//if (key != null)
+		//{
 		keyAcquired = key.hasKey;
+		//}
 
 		if (playerEntered)
 		{
@@ -103,7 +108,7 @@ public class MoveObjectController : MonoBehaviour
 					if (hit.collider.CompareTag("NormalDoor"))
 					{
 						//Debug.Log("It's a normal door!");
-						OpenNormalDoor(hit.collider.gameObject, moveableObject);
+						OpenNormalDoor(hit.collider.gameObject, moveableObject, mobileTrigger);
 					}
 					else if (hit.collider.CompareTag("ClosedDoor") && !keyAcquired)
 					{
@@ -125,7 +130,7 @@ public class MoveObjectController : MonoBehaviour
 
 	}
 
-	void OpenNormalDoor(GameObject door, MoveableObject moveableObject)
+	void OpenNormalDoor(GameObject door, MoveableObject moveableObject, bool mobileTrigger)
 	{
 		showInteractMsg = true;
 		string animBoolNameNum = animBoolName + moveableObject.objectNumber.ToString();
@@ -323,6 +328,9 @@ public class MoveObjectController : MonoBehaviour
 
 		return rtnVal;
 	}
+
+	public void setMobileTrigger(bool AmobileTrigger) { mobileTrigger = AmobileTrigger; Debug.Log("Mobile trigger true!"); /*VerifyDoor();*/ }
+
 
 	void OnGUI()
 	{

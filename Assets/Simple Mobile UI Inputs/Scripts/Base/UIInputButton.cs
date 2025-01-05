@@ -111,6 +111,11 @@ namespace UI_Inputs
                 if (joystickCanvasGroup != null)
                     joystickCanvasGroup.interactable = false;
 
+                if (holdCoroutine != null)
+                {
+                    StopCoroutine(holdCoroutine);
+                    holdCoroutine = null;
+                }
                 holdCoroutine = StartCoroutine(HoldAction());
             }
         }
@@ -144,28 +149,33 @@ namespace UI_Inputs
                 {
                     OnHoldComplete?.Invoke();
                     Debug.Log("Hold Complete!");
-                    FindInteractableObject();
+                    //FindInteractableObject();
+                    mobileTrigger.setMobileTrigger(true);
+
                     /*if (currentInteractableObject != null && moveObjectController != null)
                     {
                         moveObjectController.setMobileTrigger(true); // Trigger the mobile action
                     }*/
                     StopHold(); // Stop the hold once complete
                     break;
+
                 }
 
                 yield return null;
                 /*OnHold?.Invoke();
                 Debug.Log("Hold action triggered.");
                 yield return new WaitForSeconds(0.1f);*/ // Adjust repeat rate as needed
+                                                         //}
+                Debug.Log("4-");
             }
-            Debug.Log("4-");
-
+            isPressing = false;
         }
 
         private void FindInteractableObject()
         {
 
-            //mobileTrigger.setMobileTrigger(true);
+            mobileTrigger.setMobileTrigger(true);
+
             /*RaycastHit hit;
             Vector3 rayOrigin = Camera.main.transform.position;
             Vector3 direction = Camera.main.transform.forward;
