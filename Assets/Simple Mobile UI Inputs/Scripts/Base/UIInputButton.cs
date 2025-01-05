@@ -165,7 +165,7 @@ namespace UI_Inputs
         private void FindInteractableObject()
         {
 
-            mobileTrigger.setMobileTrigger(true);
+            //mobileTrigger.setMobileTrigger(true);
             /*RaycastHit hit;
             Vector3 rayOrigin = Camera.main.transform.position;
             Vector3 direction = Camera.main.transform.forward;
